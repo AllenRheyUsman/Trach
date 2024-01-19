@@ -2,7 +2,7 @@
 import { fetchCars } from "@/utils";
 import { HomeProps } from "@/types";
 import { fuels, yearsOfProduction } from "@/constants";
-import { CarCard,  SearchBar, CustomFilter, Hero, Finding, WhyChoose } from "@/components";
+import { CarCard,  SearchBar, CustomFilter, Hero, Finding, WhyChoose, AsSeenIn } from "@/components";
 import ShowMore from "@/components/ShowMore";
 import CarDetails from "@/components/CarDetails";
 
@@ -70,6 +70,7 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
         )}
       </div>
+      <AsSeenIn/>
     </main>
   );
 }

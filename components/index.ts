@@ -1,3 +1,4 @@
+import AsSeenIn from './AsSeenIn';
 import CarCard from './CarCard';
 import CustomButton from './CustomButton';
 import CustomFilter from './CustomFilter';
@@ -24,4 +25,5 @@ export{
     FlowbiteSearch,
     Finding,
     WhyChoose,
+    AsSeenIn,
 }
