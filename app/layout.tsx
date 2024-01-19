@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import './globals.css'
-import { Navbar, Footer } from '@/components'
+import { Navbar, Footer, FlowbiteNavBar } from '@/components'
 
 
 export const metadata: Metadata = {
@@ -17,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className='relative'>
-        <Navbar/>
+        {/* <Navbar/> */}
+        <FlowbiteNavBar/>
         {children}
         <Footer/>
         </body>

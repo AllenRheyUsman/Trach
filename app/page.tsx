@@ -2,38 +2,53 @@
 import { fetchCars } from "@/utils";
 import { HomeProps } from "@/types";
 import { fuels, yearsOfProduction } from "@/constants";
-import { CarCard, SearchBar, CustomFilter, Hero } from "@/components";
+import { CarCard,  SearchBar, CustomFilter, Hero, Finding, WhyChoose } from "@/components";
 import ShowMore from "@/components/ShowMore";
+import CarDetails from "@/components/CarDetails";
+
+
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit || 4,
     model: searchParams.model || "",
   });
+
+
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
     <main className='overflow-hidden'>
       <Hero />
+      <Finding/>
+      <WhyChoose/>
+
+
+    
+
+
+
+      
 
       <div className='mt-12 padding-x padding-y max-width' id='discover'>
-        <div className='home__text-container'>
-          <h1 className='text-4xl font-extrabold'>Car Catalogue</h1>
-          <p>Explore out cars you might like</p>
-        </div>
+      <div className='flex-1 mx-auto max-w-lg text-center'>
+  <p className="text-[#8C3AFF] font-semibold">Agent Insights</p>
+  <h1 className='text-3xl font-extrabold text-[#2D0173]'>Unfiltered User Reviews - Discover What Our Happy Clients Say!</h1>
+</div>
 
-        <div className='home__filters'>
+
+        {/* <div className='home__filters'>
           <SearchBar />
 
           <div className='home__filter-container'>
             <CustomFilter title='fuel' options={fuels} />
             <CustomFilter title='year' options={yearsOfProduction} />
           </div>
-        </div>
+        </div> */}
 
         {!isDataEmpty ? (
           <section>
@@ -44,8 +59,8 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
 
             <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length}
+              pageNumber={(searchParams.limit || 4) / 4}
+              isNext={(searchParams.limit || +1) > allCars.length}
             />
           </section>
         ) : (
@@ -57,4 +72,8 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
     </main>
   );
+}
+
+function fetchClients(arg0: { manufacturer: string; year: number; fuel: string; limit: number; model: string; }) {
+  throw new Error("Function not implemented.");
 }

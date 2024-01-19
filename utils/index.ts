@@ -1,6 +1,7 @@
 
 import { CarProps, FilterProps } from "@/types";
 
+
 export const calculateCarRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50; // Base rental price per day in dollars
   const mileageFactor = 0.1; // Additional rate per mile driven
@@ -44,6 +45,9 @@ export const deleteSearchParams = (type: string) => {
 
 export async function fetchCars(filters: FilterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
+  
+
+ 
 
   // Set the required headers for the API request
   const headers: HeadersInit = {
@@ -79,3 +83,8 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   return `${url}`;
 } 
+
+
+
+
+
