@@ -2,7 +2,7 @@
 import { fetchCars } from "@/utils";
 import { HomeProps } from "@/types";
 import { fuels, yearsOfProduction } from "@/constants";
-import { CarCard,  SearchBar, CustomFilter, Hero, Finding, WhyChoose, AsSeenIn, CarouselBlogs, Blogs } from "@/components";
+import { CarCard,  SearchBar, CustomFilter, Hero, Finding, WhyChoose, AsSeenIn, CarouselBlogs, Blogs, SearchBar2 } from "@/components";
 import ShowMore from "@/components/ShowMore";
 import CarDetails from "@/components/CarDetails";
 

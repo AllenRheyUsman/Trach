@@ -11,7 +11,9 @@ import Footer from './Footer';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import SearchBar from './SearchBar';
+import SearchBar2 from './SearchBar2';
 import SearchManufacturer from './SearchManufacturer';
+import ShowMore from './ShowMore';
 import WhyChoose from './WhyChoose';
 
 
@@ -31,5 +33,7 @@ export{
     AsSeenIn,
     CarouselBlogs,
     Blogs,
+    SearchBar2,
+    ShowMore,
    
 }

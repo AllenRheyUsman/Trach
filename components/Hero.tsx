@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { CustomButton, FlowbiteSearch, SearchBar } from '.';
+import { CustomButton, FlowbiteSearch, SearchBar, SearchBar2 } from '.';
 import Image from 'next/image';
 
 const Hero = () => {
@@ -15,7 +15,8 @@ const Hero = () => {
                 <p className='hero__subtitle2'>We are your go-to online platform designed to simplify the process <br/>of choosing the best local real estate agent for your needs.</p>
                 <div className="flex flex-col items-center gap-4 mt-10 py-10">
                   
-                    <SearchBar />
+                    <SearchBar2 />
+                  
                   
                 </div>
             </div>

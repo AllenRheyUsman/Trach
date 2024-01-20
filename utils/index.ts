@@ -42,7 +42,10 @@ export const deleteSearchParams = (type: string) => {
 
   return newPathname;
 };
-
+export const navigateSearchParams = (type: string, value: string) => {
+  const newPathname = updateSearchParams(type, value);
+  window.location.href = `/result${newPathname}`;
+};
 export async function fetchCars(filters: FilterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
   
