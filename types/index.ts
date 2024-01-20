@@ -1,6 +1,7 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 export interface CarProps {
+  message: ReactNode;
   city_mpg: number;
   class: string;
   combination_mpg: number;

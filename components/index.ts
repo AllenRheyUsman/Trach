@@ -1,5 +1,7 @@
 import AsSeenIn from './AsSeenIn';
+import Blogs from './Blogs';
 import CarCard from './CarCard';
+import CarouselBlogs from './CarouselBlogs';
 import CustomButton from './CustomButton';
 import CustomFilter from './CustomFilter';
 import Finding from './Finding';
@@ -11,6 +13,7 @@ import Navbar from './Navbar';
 import SearchBar from './SearchBar';
 import SearchManufacturer from './SearchManufacturer';
 import WhyChoose from './WhyChoose';
+
 
 export{
     Hero,
@@ -26,4 +29,7 @@ export{
     Finding,
     WhyChoose,
     AsSeenIn,
+    CarouselBlogs,
+    Blogs,
+   
 }

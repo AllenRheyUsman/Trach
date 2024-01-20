@@ -95,5 +95,38 @@ export const manufacturers = [
         { title: "Podcast", url: "/" },
         { title: "Invite a friend", url: "/" },
       ],
-    }, 
-  ];
+    },
+  ]
+    export const images = [
+      {
+        id: 1,
+        src: "/blog1.png",
+        title: "The Ultimate Guide to Choosing the Right Real Estate Agent.",
+        desc: "Choosing the right real estate agent can make all the difference in your property buying or selling experience. ",
+      },
+      {
+        id: 2,
+        src: "/blog2.png",
+        title: "Mastering the Art of Negotiation in Real Estate.",
+        desc: "Negotiation is a critical skill when buying or selling a property. As a potential homebuyer or seller, knowing how to negotiate...",
+      },
+      {
+        id: 3,
+        src: "/blog3.png",
+        title: "Tips for First-Time Homebuyers: Navigating the Real Estate Market.",
+        desc: "Buying your first home is an exciting milestone, but it can also be overwhelming. As a first-time homebuyer...",
+      },
+      {
+        id: 4,
+        src: "/hero-man.png",
+        title: "Latte",
+        desc: "A latte or caffè latte is a milk coffee that boasts a silky layer of foam as a real highlight to the drink. A true latte will be made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top",
+      },
+      {
+        id: 5,
+        src: "/hero.png",
+        title: "Macchiato",
+        desc: "Caffè macchiato, sometimes called espresso macchiato, is an espresso coffee drink with a small amount of milk, usually foamed. ",
+      },
+    ];
+    
