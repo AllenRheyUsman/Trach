@@ -1,13 +1,13 @@
 'use client';
 import { fetchCars } from "@/utils";
 import { useRouter } from 'next/navigation';
-import { CarCard, ShowMore, SearchBar2 } from "@/components";
-import { HomeProps, CarProps } from "@/types";
+import { CarCard2, ShowMore, SearchBar2 } from "@/components";
+import { HomeProps2, CarProps2 } from "@/types";
 import React, { useEffect, useState } from 'react';
 
-const ResultPage = ({ searchParams }: HomeProps) => {
+const ResultPage = ({ searchParams }: HomeProps2) => {
   const router = useRouter();
-  const [allCars, setAllCars] = useState<CarProps[]>([]);
+  const [allCars, setAllCars] = useState<CarProps2[]>([]);
 
   useEffect(() => {
     // Fetch cars whenever searchParams change
@@ -17,7 +17,7 @@ const ResultPage = ({ searchParams }: HomeProps) => {
           manufacturer: searchParams.manufacturer || "",
           year: searchParams.year || 2022,
           fuel: searchParams.fuel || "",
-          limit: searchParams.limit || 4,
+          limit: searchParams.limit || 10,
           model: searchParams.model || "",
         });
 
@@ -39,18 +39,18 @@ const ResultPage = ({ searchParams }: HomeProps) => {
         {!isDataEmpty ? (
           <div className='home__cars-wrapper'>
             {allCars.map((car) => (
-              <CarCard key={car.model} car={car} />
+              <CarCard2 key={car.model} car={car} />
             ))}
           </div>
         ) : (
           <div className='home__error-container'>
             <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
-            <p>No cars found based on the search parameters.</p>
+            <p>No Agents found based on the search.</p>
           </div>
         )}
         <ShowMore
-          pageNumber={(searchParams.limit || 4) / 4}
-          isNext={(searchParams.limit || 1) > allCars.length}
+          pageNumber={(searchParams.limit || 10) / 10}
+          isNext={(searchParams.limit || +1) > allCars.length}
         />
       </section>
     </main>

@@ -1,6 +1,7 @@
 import AsSeenIn from './AsSeenIn';
 import Blogs from './Blogs';
 import CarCard from './CarCard';
+import CarCard2 from './CarCard2';
 import CarouselBlogs from './CarouselBlogs';
 import CustomButton from './CustomButton';
 import CustomFilter from './CustomFilter';
@@ -35,5 +36,7 @@ export{
     Blogs,
     SearchBar2,
     ShowMore,
+    CarCard2,
+    
    
 }

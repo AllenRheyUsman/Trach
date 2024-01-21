@@ -34,7 +34,9 @@ const WhyChoose = () => {
       <Image src={"/database.svg"} width={40} height={20} alt='logo' />
     </div>
     {/* Second row in the first column (empty) */}
-    <div></div>
+    <div>
+      
+    </div>
   </div>
   {/* Second column */}
   <div className="col-span-9 flex flex-col">

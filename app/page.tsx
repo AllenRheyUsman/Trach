@@ -14,7 +14,7 @@ export default async function Home({ searchParams }: HomeProps) {
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 4,
+    limit: searchParams.limit || 10,
     model: searchParams.model || "",
   });
 
@@ -51,7 +51,7 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
         </div> */}
 
-        {!isDataEmpty ? (
+        {/* {!isDataEmpty ? (
           <section>
             <div className='home__cars-wrapper'>
               {allCars?.map((car) => (
@@ -69,7 +69,7 @@ export default async function Home({ searchParams }: HomeProps) {
             <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
             <p>{allCars?.message}</p>
           </div>
-        )}
+        )} */}
       </div>
       <AsSeenIn/>
       {/* <CarouselBlogs/> */}

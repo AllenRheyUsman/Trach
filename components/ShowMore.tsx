@@ -23,7 +23,7 @@ const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
       {!isNext && (
         <CustomButton
           btnType="button"
-          title="View All Reviews"
+          title="Show More"
           containerStyles="bg-[#8C3AFF] rounded-md text-white"
           handleClick={handleNavigation}
         />

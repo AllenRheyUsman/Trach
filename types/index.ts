@@ -69,3 +69,42 @@ export interface SearchManuFacturerProps {
 }
 
 
+// sdfsdfsdfsf
+
+export interface CarProps2 {
+  message: ReactNode;
+  city_mpg: number;
+  class: string;
+  combination_mpg: number;
+  cylinders: number;
+  displacement: number;
+  drive: string;
+  fuel_type: string;
+  highway_mpg: number;
+  make: string;
+  model: string;
+  transmission: string;
+  year: number;
+}
+
+export interface CarCardProps2 {
+  model: string;
+  make: string;
+  mpg: number;
+  transmission: string;
+  year: number;
+  drive: string;
+  cityMPG: number;
+}
+
+export interface FilterProps2 {
+  manufacturer?: string;
+  year?: number;
+  model?: string;
+  limit?: number;
+  fuel?: string;
+}
+
+export interface HomeProps2 {
+  searchParams: FilterProps2;
+}

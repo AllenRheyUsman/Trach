@@ -109,9 +109,13 @@ body {
   @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
 }
 
-.car-card__content {
+/* .car-card__content {
   @apply w-full flex justify-between items-start gap-2;
+} */
+.car-card__content-title2 {
+  @apply text-[22px] leading-[26px] font-bold capitalize;
 }
+
 
 .car-card__content-title {
   @apply text-[22px] leading-[26px] font-bold capitalize;
@@ -147,6 +151,9 @@ body {
 
 .car-card__btn-container {
   @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
+.car-card__btn-container2 {
+  @apply  absolute bottom-0 w-full z-10 bg-transparent;
 }
 /* END: Car Card styles */
 
