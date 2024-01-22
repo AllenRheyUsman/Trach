@@ -44,7 +44,7 @@ export const manufacturers = [
 
   
   export const yearsOfProduction = [
-    { title: "Year", value: "" },
+    { title: "Select Reviews", value: "" },
     { title: "2015", value: "2015" },
     { title: "2016", value: "2016" },
     { title: "2017", value: "2017" },
@@ -58,8 +58,12 @@ export const manufacturers = [
   
   export const fuels = [
     {
-      title: "Fuel",
+      title: "Select price range",
       value: "",
+    },
+    {
+      title: "Fuel",
+      value: "Fuel",
     },
     {
       title: "Gas",
@@ -69,6 +73,36 @@ export const manufacturers = [
       title: "Electricity",
       value: "Electricity",
     },
+  ];
+  export const transmission = [
+    {
+      title: "Select fees range",
+      value: "",
+    },
+    {
+      title: "Online",
+      value: "a",
+    },
+    {
+      title: "Offline",
+      value: "m",
+    },
+    
+  ];
+  export const drive = [
+    {
+      title: "Select weeks",
+      value: "",
+    },
+    {
+      title: "option1",
+      value: "FWD",
+    },
+    {
+      title: "option2",
+      value: "RWD",
+    },
+    
   ];
   
   export const footerLinks = [

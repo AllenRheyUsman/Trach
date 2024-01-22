@@ -22,6 +22,7 @@ export interface FilterProps {
   model?: string;
   limit?: number;
   fuel?: string;
+  transmission?: string;
 }
 
 export interface HomeProps {
@@ -103,6 +104,7 @@ export interface FilterProps2 {
   model?: string;
   limit?: number;
   fuel?: string;
+  transmission?: string;
 }
 
 export interface HomeProps2 {

@@ -28,25 +28,12 @@ export default function CustomFilter({ title, options }: CustomFilterProps) {
           handleUpdateParams(e); // Update the URL search parameters and navigate to the new URL
         }}
       >
-        <div className=' flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3'>
-          
-            <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
-          
-          <div className="grid grid-rows-2">
-          <div className="text-sm text-gray-500">
-            Avg sale time
-          </div>
+        <div className='relative w-fit z-10'>
           {/* Button for the listbox */}
-          <Listbox.Button className=' relative w-full min-w-[127px] flex justify-between items-center cursor-default  bg-white   text-right  sm:text-sm 
-            
-          '>
-            
-            <span className='truncate text-[#2D0173] font-semibold flex gap-5'>{selected.title}
-             <Image src='/time.svg' width={5} height={20} className=' object-contain' alt='chevron_up-down' /></span>
-            
+          <Listbox.Button className='custom-filter__btn'>
+            <span className='block truncate'>{selected.title}</span>
+            <Image src='/chevron-up-down.svg' width={20} height={20} className='ml-4 object-contain' alt='chevron_up-down' />
           </Listbox.Button>
-          </div>
-          
           {/* Transition for displaying the options */}
           <Transition
             as={Fragment} // group multiple elements without introducing an additional DOM node i.e., <></>
