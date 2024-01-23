@@ -96,7 +96,7 @@ body {
 }
 
 .home__cars-wrapper {
-  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-3 ;
 }
 
 .home__error-container {
@@ -113,7 +113,7 @@ body {
   @apply w-full flex justify-between items-start gap-2;
 } */
 .car-card__content-title2 {
-  @apply text-[22px] leading-[26px] font-bold capitalize;
+  @apply text-[22px] leading-[26px] font-bold capitalize text-[#290F6A];
 }
 
 
@@ -242,3 +242,20 @@ body {
 .search-manufacturer__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
+
+
+.right-offcanvas-modal {
+  width: 30%;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.right-offcanvas-modal.show {
+  transform: translateX(0);
+}
+
+.right-offcanvas-content {
+  padding: 15px;
+}
+

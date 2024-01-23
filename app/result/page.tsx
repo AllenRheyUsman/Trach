@@ -1,7 +1,7 @@
 'use client';
 import { fetchCars } from "@/utils";
 import { useRouter } from 'next/navigation';
-import { CarCard2, ShowMore, SearchBar2 } from "@/components";
+import { CarCard2, ShowMore, SearchBar2, OffCanvas } from "@/components";
 import { HomeProps2, CarProps2 } from "@/types";
 import React, { useEffect, useState } from 'react';
 import ResultSearchBar from "@/components/ResultSearchBar";
@@ -25,7 +25,7 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
           manufacturer: searchParams.manufacturer || "",
           year: searchParams.year || 2022,
           fuel: searchParams.fuel || "",
-          limit: searchParams.limit || 10,
+          limit: searchParams.limit || 5500,
           model: searchParams.model || "",
         });
 
@@ -44,14 +44,27 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
 
   return (
     <main className="">
+      
       <div className="hero">
         <ResultSearchBar manufacturer={manufacturer} setManuFacturer={setManufacturer}/>
+        
       </div>
-      
-      <section>
+        {/* Display the total number of cars */}
+        {/* Display the total number of cars and the manufacturer entered in the search parameters */}
+<div className="hero my-10 font-semibold text-xl">
+  {allCars.length} agents found in
+  <span className="text-[#9300FF]">
+  {searchParams.manufacturer || "All Manufacturers"}
+  </span>
+  
+</div>
+    
+
+      <section className="flex flex-wrap">
+       
         {!isDataEmpty ? (
-          <div className='home__cars-wrapper'>
-            {allCars.map((car) => (
+          <div className='home__cars-wrapper hero grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+            {allCars.slice((currentPage - 1) * 12, currentPage * 12).map((car) => (
               <CarCard2 key={car.model} car={car} />
             ))}
           </div>
@@ -62,14 +75,14 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
           </div>
         )}
         
-        <ShowMore
+        {/* <ShowMore
           pageNumber={(searchParams.limit || 10) / 10}
-          isNext={(searchParams.limit || +1) > allCars.length}
-        />
-        <div className="flex overflow-x-auto sm:justify-center">
-      <Pagination currentPage={currentPage} totalPages={100} onPageChange={onPageChange} showIcons />
-    </div>
+          isNext={(searchParams.limit || 1) > allCars.length}
+        /> */}
+        
       </section>
+      <div className="flex overflow-x-auto sm:justify-center hero my-5">
+        <Pagination currentPage={currentPage} totalPages={Math.ceil(allCars.length / 12)} onPageChange={onPageChange} showIcons />    </div>
     </main>
   );
 };

@@ -18,139 +18,111 @@ const CarCard2 = ({ car }: CarCardProps2) => {
   const carRent = calculateCarRent(city_mpg, year);
 
   return (
-    <div className='car-card group'>
-      <div className='relative flex w-full mt-2'>
+    <div className='w-[90%] shadow-sm flex flex-col p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl group '>
+      {/* Gas efficiency and drive information */}
+      <div className='relative flex w-full'>
         <div className='flex w-full justify-between text-gray py-3'>
           <div className='flex flex-wrap justify-center items-center gap-2'>
             <Image src={"/gas.svg"} width={20} height={20} alt='gas' />
-            <p className='text-[14px]'>
-              {city_mpg} 
+            <p className='text-[14px] rounded-full'>
+              {city_mpg}
             </p>
           </div>
           <div className='flex flex-col justify-center items-center gap-2'></div>
           <div className='flex flex-wrap justify-center items-center gap-2 '>
-            
-            <span className={`bg-${drive.toUpperCase() === 'FWD' ? 'red-500' : 'green-500'} h-[10px] w-[10px] rounded-full`}>
-                       
-            </span>
+            <span className={`bg-${drive.toUpperCase() === 'FWD' ? 'red-500' : 'green-500'} h-[10px] w-[10px] rounded-full`}></span>
             <p className={`text-${drive.toUpperCase() === 'FWD' ? 'red-500' : 'green-500'} text-[14px]`}>
-                {drive.toUpperCase()=== 'FWD' ? 'Offline' : 'Online'}
+              {drive.toUpperCase()=== 'FWD' ? 'Offline' : 'Online'}
             </p>
-           
           </div>
         </div>
       </div>
-      <div className='car-card__content bg-[#F8F9FF] relative w-full  my-3 object-contain'>
-        <div className='car-card__content-title2 flex flex-wrap gap-4 '>
-          <Image src={generateCarImageUrl(car)} alt={'avatar'} width={70} height={70} className='rounded-full bg-[#e6dfcf]'/>
-          {model}
+
+      {/* Car details and image */}
+      <div className='flex bg-[#F8F9FF] w-full  my-3'>
+        <div className='flex relative w-fit z-10 px-5'>
+          <div className='grid grid-rows-2 '>
+            <Image src={generateCarImageUrl(car)} alt={'avatar'} width={70} height={70} className='rounded-full bg-[#e6dfcf] text-[#eceaf0] object-contain'/>
+          </div>
         </div>
-        <div className='text-start ps-10 ms-12'>
-          {make}
+        <div className="justify-start mb-3">
+          <div className='car-card__content-title2 pb-2'>{model}</div>
+          <div className='w-full pb-2'>{make}</div>
+          <div className='flex flex-wrap w-full gap-2'>
+            <Image src={'/star2.svg'} alt={''} width={20} height={20} />
+            <h1 className='text-[#FF8933] '>
+              {carRent}
+            </h1>
+            <p>/ 3.5k reviews</p>
+          </div>
+          <div></div>
         </div>
-        <div className='ps-10 ms-12 pt-2 flex flex-wrap gap-2'>
-          <Image src={'/star2.svg'} alt={''} width={20} height={20} />
-          <h1 className='text-[#FF8933]'>
-            {carRent}
-          </h1>
-          / 3.5k reviews
+      </div>
+
+      {/* Additional information grid */}
+      <div className='grid grid-cols-2 mb-10 '>
+        {/* Time-related information */}
+        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3 py-2 '>
+          <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
+          <div className="grid grid-rows-2">
+            <div>
+              1st row 1st col
+            </div>
+            <div>
+              asdasd
+            </div>
+          </div>
+        </div>
+        {/* More time-related information */}
+        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3  py-2 ml-5 '>
+          <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
+          <div className="grid grid-rows-2">
+            <div>
+              1st row 2nd col
+            </div>
+            <div>
+              asdasd
+            </div>
+          </div>
+        </div>
+        {/* Even more time-related information */}
+        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3 py-2 mb-10'>
+          <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
+          <div className="grid grid-rows-2">
+            <div>
+              2nd row 1st col
+            </div>
+            <div>
+              asdasd
+            </div>
+          </div>
+        </div>
+        {/* Last time-related information */}
+        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3 py-2 ml-5 mb-10'>
+          <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
+          <div className="grid grid-rows-2">
+            <div>
+              2nd row 2nd col
+            </div>
+            <div>
+              asdasd
+            </div>
+          </div>
         </div>
       </div>
-        
-      <div className='relative w-full md:p-8 grid md:grid-cols-2 gap-4 mb-5h-50'>
-  {/* Grid Item 1 */}
-  <div className=''>
-    {/* Inner Grid for Grid Item 1 */}
-    <div className='grid  justify-start'>
-      {/* Inner Grid Item 1 */}
-      <div className='flex flex-wrap justify-start px-2 gap-1'>
-            <Image src={'/fees.svg'} alt={''} width={20} height={20}  className='text-start'/>
-                <h1 className='text-start mx-2 font-extrabold text-lg text-[#37005F] '>
-                    Fees
-                </h1>
-            <Image src={'/info.svg'} alt={''} width={20} height={20} className='mx-2 text-end'/>
-      </div>
-    
-      <div className=' text-start px-9'>
-        .75% (no props)
-      </div>
-    </div>
-  </div>
 
-  {/* Grid Item 2 */}
-  <div className=''>
-    {/* Inner Grid for Grid Item 1 */}
-    <div className='grid  justify-start'>
-      {/* Inner Grid Item 1 */}
-      <div className='flex flex-wrap justify-start px-2 gap-1'>
-            <Image src={'/fees.svg'} alt={''} width={20} height={20}  className='text-start'/>
-                <h1 className='text-start mx-2 font-extrabold text-lg text-[#37005F] '>
-                    Price Range
-                </h1>
-            <Image src={'/info.svg'} alt={''} width={20} height={20} className='mx-2 text-end'/>
-      </div>
-    
-      <div className=' text-start px-9'>
-        .75% (no props)
-      </div>
-    </div>
-  </div>
-
-  {/* Grid Item 3 */}
-  <div className=''>
-    {/* Inner Grid for Grid Item 1 */}
-    <div className='grid  justify-start'>
-      {/* Inner Grid Item 1 */}
-      <div className='flex flex-wrap justify-start px-2 gap-1'>
-            <Image src={'/fees.svg'} alt={''} width={20} height={20}  className='text-start'/>
-                <h1 className='text-start mx-2 font-extrabold text-lg text-[#37005F] '>
-                    Avg sale time
-                </h1>
-            <Image src={'/info.svg'} alt={''} width={20} height={20} className='mx-2 text-end'/>
-      </div>
-    
-      <div className=' text-start px-9'>
-        .75% (no props)
-      </div>
-    </div>
-  </div>
-
-  {/* Grid Item 4 */}
-   <div className=''>
-    {/* Inner Grid for Grid Item 1 */}
-    <div className='grid  justify-start'>
-      {/* Inner Grid Item 1 */}
-      <div className='flex flex-wrap justify-start px-2 gap-1'>
-            <Image src={'/fees.svg'} alt={''} width={20} height={20}  className='text-start'/>
-                <h1 className='text-start mx-2 font-extrabold text-lg text-[#37005F] '>
-                    Listed last month
-                </h1>
-            <Image src={'/info.svg'} alt={''} width={20} height={20} className='mx-2 text-end'/>
-      </div>
-    
-      <div className=' text-start px-9'>
-        .75% (no props)
-      </div>
-    </div>
-  </div>
-     
-</div>
-
-
-
-
-      <div className='relative flex w-full mt-5'>
+      {/* View Profile buttons */}
+      <div className='relative flex w-full '>
         <div className='flex group-hover:invisible w-full justify-between text-gray'>
-        <div className='car-card__btn-container2 '>
-          <CustomButton
-            title='View Profile'
-            containerStyles='w-full py-[16px] rounded-sm bg-transparent '
-            textStyles=" text-[#9300FF] text-[14px] leading-[17px] font-bold"
-            rightIcon="/right-arrow.svg"
-            handleClick={() => setIsOpen(true)}
-          />
-        </div>
-         
+          <div className='car-card__btn-container2 '>
+            <CustomButton
+              title='View Profile'
+              containerStyles='w-full py-[16px] rounded-sm bg-transparent border'
+              textStyles=" text-[#9300FF] text-[14px] leading-[17px] font-bold"
+              rightIcon="/right-arrow.svg"
+              handleClick={() => setIsOpen(true)}
+            />
+          </div>
         </div>
         <div className='car-card__btn-container'>
           <CustomButton
@@ -162,9 +134,12 @@ const CarCard2 = ({ car }: CarCardProps2) => {
           />
         </div>
       </div>
+
+      {/* Modal for displaying car details */}
       <CarDetails2 isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} />
     </div>
   );
 };
 
+// Exporting the component
 export default CarCard2;

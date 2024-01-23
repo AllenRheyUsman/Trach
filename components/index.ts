@@ -11,6 +11,7 @@ import FlowbiteSearch from './FlowbiteSearch';
 import Footer from './Footer';
 import Hero from './Hero';
 import Navbar from './Navbar';
+import OffCanvas from './OffCanvas';
 import SearchBar from './SearchBar';
 import SearchBar2 from './SearchBar2';
 import SearchManufacturer from './SearchManufacturer';
@@ -37,6 +38,7 @@ export{
     SearchBar2,
     ShowMore,
     CarCard2,
+    OffCanvas,
     
    
 }

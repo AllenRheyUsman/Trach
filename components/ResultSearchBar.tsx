@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Combobox } from '@headlessui/react';
 import { SearchManuFacturerProps } from '@/types';
 import { drive, fuels, manufacturers, transmission, yearsOfProduction } from '@/constants';
-import { CustomButton, CustomFilter, SearchManufacturer } from '.';
+import { CustomButton, CustomFilter, OffCanvas, SearchManufacturer } from '.';
 import { Button, Navbar, Pagination } from 'flowbite-react';
 
 
@@ -93,6 +93,8 @@ const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerPr
             <CustomFilter title='test2' options={yearsOfProduction} />
             <CustomFilter title='test3' options={transmission} />
             <SearchButton title="Search" otherClasses={'rounded-md bg-[#7100C3]'} />
+            {/* <OffCanvas/> */}
+
           
         
         <Combobox.Options className="absolute top-full left-10 pl-10 ml-10 z-10">
