@@ -7,6 +7,8 @@ import { SearchManuFacturerProps } from '@/types';
 import { drive, fuels, manufacturers, transmission, yearsOfProduction } from '@/constants';
 import { CustomButton, CustomFilter, OffCanvas, SearchManufacturer } from '.';
 import { Button, Navbar, Pagination } from 'flowbite-react';
+import Modal from './Modal';
+import { CarProps } from '@/types';
 
 
 const SearchButton = ({ title, otherClasses }: { title: string; otherClasses: string }) => (
@@ -93,7 +95,8 @@ const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerPr
             <CustomFilter title='test2' options={yearsOfProduction} />
             <CustomFilter title='test3' options={transmission} />
             <SearchButton title="Search" otherClasses={'rounded-md bg-[#7100C3]'} />
-            {/* <OffCanvas/> */}
+            <Modal/>
+          
 
           
         
@@ -130,6 +133,7 @@ const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerPr
       </Combobox>
       
     </div>
+    
     
     </form>
   

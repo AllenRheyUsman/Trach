@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import './globals.css'
 import { Navbar, Footer, FlowbiteNavBar } from '@/components'
+import { OffCanvasProvider } from '@/providers/OffCanvas-provider'
 
 
 export const metadata: Metadata = {
@@ -16,12 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <OffCanvasProvider>
       <body className='relative'>
         {/* <Navbar/> */}
         <FlowbiteNavBar/>
         {children}
         <Footer/>
         </body>
+      </OffCanvasProvider>
     </html>
   )
 }

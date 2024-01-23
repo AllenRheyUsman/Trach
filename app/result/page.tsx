@@ -81,8 +81,8 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
         /> */}
         
       </section>
-      <div className="flex overflow-x-auto sm:justify-center hero my-5">
-        <Pagination currentPage={currentPage} totalPages={Math.ceil(allCars.length / 12)} onPageChange={onPageChange} showIcons />    </div>
+      {/* <div className="flex overflow-x-auto sm:justify-center hero my-5">
+        <Pagination currentPage={currentPage} totalPages={Math.ceil(allCars.length / 12)} onPageChange={onPageChange} showIcons />    </div> */}
     </main>
   );
 };
