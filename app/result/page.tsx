@@ -47,10 +47,8 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
       
       <div className="hero">
         <ResultSearchBar manufacturer={manufacturer} setManuFacturer={setManufacturer}/>
-        
       </div>
-        {/* Display the total number of cars */}
-        {/* Display the total number of cars and the manufacturer entered in the search parameters */}
+      
 <div className="hero my-10 font-semibold text-xl">
   {allCars.length} agents found in
   <span className="text-[#9300FF]">
@@ -81,8 +79,8 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
         /> */}
         
       </section>
-      {/* <div className="flex overflow-x-auto sm:justify-center hero my-5">
-        <Pagination currentPage={currentPage} totalPages={Math.ceil(allCars.length / 12)} onPageChange={onPageChange} showIcons />    </div> */}
+      <div className="flex overflow-x-auto sm:justify-center hero my-5">
+        <Pagination currentPage={currentPage} totalPages={Math.ceil(allCars.length / 12)} onPageChange={onPageChange} showIcons />    </div>
     </main>
   );
 };

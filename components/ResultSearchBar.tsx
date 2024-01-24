@@ -5,10 +5,10 @@ import { useRouter } from 'next/navigation';
 import { Combobox } from '@headlessui/react';
 import { SearchManuFacturerProps } from '@/types';
 import { drive, fuels, manufacturers, transmission, yearsOfProduction } from '@/constants';
-import { CustomButton, CustomFilter, OffCanvas, SearchManufacturer } from '.';
-import { Button, Navbar, Pagination } from 'flowbite-react';
+import {  CustomFilter, } from '.';
+
 import Modal from './Modal';
-import { CarProps } from '@/types';
+
 
 
 const SearchButton = ({ title, otherClasses }: { title: string; otherClasses: string }) => (

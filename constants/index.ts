@@ -1,3 +1,5 @@
+import { CheckboxOption } from "@/types";
+
 export const manufacturers = [
   "Acura",
   "Alfa Romeo",
@@ -207,4 +209,5 @@ export const postal_codes =[
         desc: "Caffè macchiato, sometimes called espresso macchiato, is an espresso coffee drink with a small amount of milk, usually foamed. ",
       },
     ];
+    
     

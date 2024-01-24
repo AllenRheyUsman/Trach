@@ -263,3 +263,48 @@ body {
   padding: 15px;
 }
 
+/* styles/globals.css or styles/tailwind.css */
+
+.range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  margin: 0;
+  background-color: #8C3AFF;
+  outline: none;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #8C3AFF;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+}
+
+.range-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #8C3AFF;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+}
+/* Add this to your CSS file or styles */
+.tooltip {
+  position: absolute;
+  top: 40px;
+  left: 65%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
