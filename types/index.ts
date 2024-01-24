@@ -22,7 +22,6 @@ export interface FilterProps {
   model?: string;
   limit?: number;
   fuel?: string;
-  transmission?: string;
 }
 
 export interface HomeProps {
@@ -69,6 +68,11 @@ export interface SearchManuFacturerProps {
   setManuFacturer: (manufacturer: string) => void;
 }
 
+// Update your SearchPostCodePropstest interface
+export interface SearchPostCodePropstest {
+  postal_code: string;
+  setPostal_code: (postal_code: string) => void;
+}
 
 // sdfsdfsdfsf
 
@@ -109,4 +113,21 @@ export interface FilterProps2 {
 
 export interface HomeProps2 {
   searchParams: FilterProps2;
+}
+
+export interface HomePropstest {
+  searchParams: FilterPropstest;
+}
+
+
+export interface CarPropstest {
+  agent_rating: number;
+  person_name: string;
+  postal_code: string;
+}
+
+export interface FilterPropstest {
+  agent_rating?: number;
+  person_name?: string;
+  postal_code?: string;
 }

@@ -1,7 +1,7 @@
 
 import { CarProps, FilterProps, CarProps2 } from "@/types";
 import { CarPropstest, FilterPropstest } from "@/types";
-import { fetchCarsTest } from "./test";
+
 
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
@@ -48,23 +48,21 @@ export const navigateSearchParams = (type: string, value: string) => {
   const newPathname = updateSearchParams(type, value);
   window.location.href = `/result${newPathname}`;
 };
-export async function fetchCars(filters: FilterProps) {
-  const { manufacturer, year, model, limit, fuel } = filters;
+export async function fetchCarstest(filters: FilterPropstest) {
+  const { postal_code, agent_rating, person_name } = filters;
   
 
  
 
   // Set the required headers for the API request
   const headers: HeadersInit = {
-    // 'X-RapidAPI-Key': 'ddeec46817msh45b32b0ecc215efp1732d0jsnf1ac0705742e',
-    // 'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
-    'X-RapidAPI-Key': 'da7f40f106mshff0f91cb653fe18p16a4c9jsn036b5081c349',
-    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
+    'X-RapidAPI-Key': 'ddeec46817msh45b32b0ecc215efp1732d0jsnf1ac0705742e',
+    'X-RapidAPI-Host': 'us-realtor.p.rapidapi.com'
   };
 
   // Set the required headers for the API request
   const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    `https://us-realtor.p.rapidapi.com/api/v1/agents/list?postal_code=${postal_code}&agent_rating=${agent_rating}&person_name=${person_name}`,
     {
       headers: headers,
     }
