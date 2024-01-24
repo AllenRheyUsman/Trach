@@ -6,6 +6,8 @@ import { HomeProps2, CarProps2 } from "@/types";
 import React, { useEffect, useState } from 'react';
 import ResultSearchBar from "@/components/ResultSearchBar";
 import { Pagination } from "flowbite-react";
+import Dropdown from "@/components/Dropdown";
+import { Container, DropdownButton, Nav, NavDropdown, Navbar } from "react-bootstrap";
 
 const ResultPage = ({ searchParams }: HomeProps2) => {
 
@@ -45,15 +47,20 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
   return (
     <main className="">
       
-      <div className="hero">
+      <div className="hero z-50">
         <ResultSearchBar manufacturer={manufacturer} setManuFacturer={setManufacturer}/>
       </div>
       
-<div className="hero my-10 font-semibold text-xl">
+<div className="hero grid grid-cols-2 my-5 font-semibold text-xl px-5 gap-2">
+  <div className="flex flex-wrap">
   {allCars.length} agents found in
-  <span className="text-[#9300FF]">
+  <span className="text-[#9300FF] ml-2"> 
   {searchParams.manufacturer || "All Manufacturers"}
   </span>
+  </div >
+ <div className="ml-auto z-50 bg-white p-3 rounded-md ">
+ <Dropdown/>
+ </div>
   
 </div>
     
@@ -61,7 +68,7 @@ const ResultPage = ({ searchParams }: HomeProps2) => {
       <section className="flex flex-wrap">
        
         {!isDataEmpty ? (
-          <div className='home__cars-wrapper hero grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+          <div className='home__cars-wrapper  hero grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-10 justify-items-center -z-50'>
             {allCars.slice((currentPage - 1) * 12, currentPage * 12).map((car) => (
               <CarCard2 key={car.model} car={car} />
             ))}

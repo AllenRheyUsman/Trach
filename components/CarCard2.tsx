@@ -40,7 +40,7 @@ const CarCard2 = ({ car }: CarCardProps2) => {
 
       {/* Car details and image */}
       <div className='flex bg-[#F8F9FF] w-full  my-3'>
-        <div className='flex relative w-fit z-10 px-5'>
+        <div className='flex relative w-fit  px-5'>
           <div className='grid grid-rows-2 '>
             <Image src={generateCarImageUrl(car)} alt={'avatar'} width={70} height={70} className='rounded-full bg-[#e6dfcf] text-[#eceaf0] object-contain'/>
           </div>
@@ -62,7 +62,7 @@ const CarCard2 = ({ car }: CarCardProps2) => {
       {/* Additional information grid */}
       <div className='grid grid-cols-2 mb-10 '>
         {/* Time-related information */}
-        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3 py-2 '>
+        <div className='flex relative w-fit  border-l-2 border-gray-200 gap-1 pl-3 py-2 '>
           <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
           <div className="grid grid-rows-2">
             <div>
@@ -74,7 +74,7 @@ const CarCard2 = ({ car }: CarCardProps2) => {
           </div>
         </div>
         {/* More time-related information */}
-        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3  py-2 ml-5 '>
+        <div className='flex relative w-fit  border-l-2 border-gray-200 gap-1 pl-3  py-2 ml-5 '>
           <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
           <div className="grid grid-rows-2">
             <div>
@@ -86,7 +86,7 @@ const CarCard2 = ({ car }: CarCardProps2) => {
           </div>
         </div>
         {/* Even more time-related information */}
-        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3 py-2 mb-10'>
+        <div className='flex relative w-fit  border-l-2 border-gray-200 gap-1 pl-3 py-2 mb-10'>
           <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
           <div className="grid grid-rows-2">
             <div>
@@ -98,7 +98,7 @@ const CarCard2 = ({ car }: CarCardProps2) => {
           </div>
         </div>
         {/* Last time-related information */}
-        <div className='flex relative w-fit z-10 border-l-2 border-gray-200 gap-1 pl-3 py-2 ml-5 mb-10'>
+        <div className='flex relative w-fit  border-l-2 border-gray-200 gap-1 pl-3 py-2 ml-5 mb-10'>
           <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" pb-5"/>
           <div className="grid grid-rows-2">
             <div>
