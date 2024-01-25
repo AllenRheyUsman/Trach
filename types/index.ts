@@ -155,6 +155,15 @@ export interface CustomAccordionProps {
   sections: (AccordionSection | DropdownSection)[];
 }
 
+export interface AccordionProps {
+  title1:string,
+  title2:string;
+  
+  content1: React.ReactNode[];
+  content2:string;
+  
+}
+
 
 export const servicesOptions: CheckboxOption[] = [
   { label: 'Virtual tours', value: 'USA' },
@@ -196,3 +205,4 @@ export const ratingsOptions: CheckboxOption[] = [
   { label: 'Online', value: 'USA5' },
   { label: 'Offline', value: 'Germany4' },
 ];
+

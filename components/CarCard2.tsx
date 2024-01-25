@@ -6,16 +6,22 @@ import { CarProps2 } from '@/types';
 import { CustomButton } from '.';
 import { calculateCarRent, generateCarImageUrl } from '@/utils';
 import CarDetails2 from './CarDetails2';
+import { useRouter } from 'next/navigation';
 
 interface CarCardProps2 {
   car: CarProps2;
 }
 
 const CarCard2 = ({ car }: CarCardProps2) => {
-  const { city_mpg, year, make, model, transmission, drive } = car;
+  const { city_mpg, year, make, model,  drive } = car;
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter(); // Initialize the router
 
   const carRent = calculateCarRent(city_mpg, year);
+  const handleViewProfile = () => {
+    // Use the router to navigate to the profile page with the manufacturer parameter
+    router.push(`/profile?model=${model}`);
+  };
 
   return (
     <div className='w-[90%] shadow-sm flex flex-col p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl group '>
@@ -126,11 +132,12 @@ const CarCard2 = ({ car }: CarCardProps2) => {
         </div>
         <div className='car-card__btn-container'>
           <CustomButton
-            title='View Profile'
+            title='View Profilea'
             containerStyles='w-full py-[16px] rounded-sm bg-[#8C3AFF]'
             textStyles=" text-white text-[14px] leading-[17px] font-bold"
             rightIcon="/right-arrow.svg"
-            handleClick={() => setIsOpen(true)}
+            // handleClick={() => setIsOpen(true)}
+            handleClick={handleViewProfile}
           />
         </div>
       </div>
