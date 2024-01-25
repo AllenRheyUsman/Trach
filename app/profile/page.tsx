@@ -32,7 +32,7 @@ const ProfilePage = ({ searchParams }: HomeProps2) => {
           manufacturer: searchParams.manufacturer || "",
           year: searchParams.year || 2022,
           fuel: searchParams.fuel || "",
-          limit: searchParams.limit || 5500,
+          limit: searchParams.limit || 1,
           model: searchParams.model || "",
         });
 
@@ -57,7 +57,7 @@ const ProfilePage = ({ searchParams }: HomeProps2) => {
        
         {!isDataEmpty ? (
           <div className='home__cars-wrapper  hero grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-10 justify-items-center -z-50'>
-            {allCars.slice((currentPage - 1) * 12, currentPage * 12).map((car) => (
+            {allCars.slice((currentPage - 1) * 1, currentPage * 1).map((car) => (
               <ProfileCard key={car.model} car={car} />
             ))}
           </div>
