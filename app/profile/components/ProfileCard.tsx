@@ -29,7 +29,7 @@ const ProfileCard = ({ car }: CarCardProps2) => {
   };
 
   return (
-    <div className='w-full shadow-sm flex flex-col p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl group '>
+    <div className='w-full+ shadow-sm flex flex-col p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl group '>
       {/* Gas efficiency and drive information */}
       <div className='relative flex w-full'>
         <div className='flex w-full justify-center text-gray py-3 ml-auto'>
@@ -61,7 +61,7 @@ const ProfileCard = ({ car }: CarCardProps2) => {
           <span className=' text-md text-gray-500 justify-center flex'>
           {make}
           </span>
-          <span className='font-semibold text-lg text-[#290F6A] justify-center flex'>
+          <span className='font-semibold text-lg text-[#290F6A] justify-center flex py-1'>
               {model}
           </span>
         
@@ -97,23 +97,23 @@ const ProfileCard = ({ car }: CarCardProps2) => {
       </div>
       <div>
         <AccordionProfile
-          title1="services"
+          title1="Services"
           title2="View More"
          
           content1={Object.entries(car).map(([key, value]) => (
             <div className='flex  gap-5 space-x-1 w-full text-left ' key={key}>
               {/* First column (image) */}
-              <div className="flex items-start text-start">
+              <div className="flex items-start text-start py-2">
                 <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" " />
               </div>
               {/* Second column (h4) */}
-              <div className="flex items-start text-start">
+              <div className="flex items-start text-start pt-1">
                 <h4 className='text-gray capitalize'>{key.split("_").join("_")}</h4>
               </div>
               {/* Third column (p) */}
               <div className=" flex-1 ">
                 <p className='text-black-100 font-semibold pt-2 text-end'>
-                  {value}
+                  {/* {value} */}
                 </p>
               </div>
             </div>

@@ -1,27 +1,27 @@
 'use client';
 import { fetchCars } from "@/utils";
-import { useRouter } from 'next/navigation';
-import { CarCard2, ShowMore, SearchBar2, OffCanvas } from "@/components";
+
+
 import { HomeProps2, CarProps2 } from "@/types";
 import React, { useEffect, useState } from 'react';
-import ResultSearchBar from "@/components/ResultSearchBar";
-import { Pagination } from "flowbite-react";
-import Dropdown from "@/components/Dropdown";
-import { Container, DropdownButton, Nav, NavDropdown, Navbar } from "react-bootstrap";
+
+import { Spinner } from "flowbite-react";
+
 
 import ProfileCard from "./components/ProfileCard";
+import Details from "./components/Details";
 
 
 
 
 const ProfilePage = ({ searchParams }: HomeProps2) => {
 
-  const [manufacturer, setManufacturer] = useState('')
-  const router = useRouter();
-  const [allCars, setAllCars] = useState<CarProps2[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  
 
-  const onPageChange = (page: number) => setCurrentPage(page);
+  const [allCars, setAllCars] = useState<CarProps2[]>([]);
+  const [currentPage] = useState(1);
+
+ 
 
 
   useEffect(() => {
@@ -45,30 +45,31 @@ const ProfilePage = ({ searchParams }: HomeProps2) => {
     fetchCarsData();
   }, [searchParams]); // Now useEffect will run whenever searchParams change
 
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+  const isDataEmpty = !allCars || allCars.length === 0;
+
 
 
 
   return (
-    <main className="">
+    <main className="hero h-full  ">
     
       
-      <section className="grid grid-cols-2 mt-10 hero h-[100vh]">
+      <section className="grid grid-cols-2 mt-10 hero ">
        
         {!isDataEmpty ? (
-          <div className='home__cars-wrapper  hero grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-10 justify-items-center -z-50'>
+          <div className=' hero '>
             {allCars.slice((currentPage - 1) * 1, currentPage * 1).map((car) => (
               <ProfileCard key={car.model} car={car} />
             ))}
           </div>
         ) : (
           <div className='home__error-container'>
-            <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
-            <p>No Agents found based on the search.</p>
+            
+             <Spinner aria-label="Default status example" color={"purple"}/>;
           </div>
         )}
         
-        
+        <Details/>
         
       </section>
       
