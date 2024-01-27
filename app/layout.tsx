@@ -1,30 +1,30 @@
 import type { Metadata } from 'next'
 
 import './globals.css'
-import { Navbar, Footer, FlowbiteNavBar } from '@/components'
-import { OffCanvasProvider } from '@/providers/OffCanvas-provider'
+import { ClerkProvider } from '@clerk/nextjs';
+
 
 
 export const metadata: Metadata = {
   title: 'Trach App',
   description: 'Real Estate Comparison Hub',
+  icons:{
+    icon:'/logo.svg'
+  }
 }
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
+    <ClerkProvider>
     <html lang="en">
-      <OffCanvasProvider>
       <body className='relative'>
-        {/* <Navbar/> */}
-        <FlowbiteNavBar/>
         {children}
-        <Footer/>
         </body>
-      </OffCanvasProvider>
     </html>
+    </ClerkProvider>
   )
 }

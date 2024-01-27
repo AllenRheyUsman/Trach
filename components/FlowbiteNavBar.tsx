@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CustomButton } from '.';
+import { SignedOut } from '@clerk/nextjs';
 
 const FlowbiteNavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -81,8 +82,22 @@ const FlowbiteNavBar = () => {
         </div>
         
         </div>
+
+        <SignedOut>
+        <button  className="text-[#9300FF] hover:text-black-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+        <Link href={'/sign-in'}>
+                Login
+              </Link>
+        </button>
+
+        </SignedOut>
         
-          <button  className="text-[#9300FF] font-medium hover:text-black-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Sign In</button>
+         
+
+
+
+
+
           <button  className="text-white bg-[#9300FF] hover:bg-[#290F6A] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800  text-white rounded-md min-w-[130px]">For Agents</button>
           <button
             onClick={toggleDropdown}
