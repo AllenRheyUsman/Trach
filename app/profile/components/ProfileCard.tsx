@@ -25,7 +25,7 @@ const ProfileCard = ({ car }: CarCardProps2) => {
   const carRent = calculateCarRent(city_mpg, year);
   const handleViewProfile = () => {
     // Use the router to navigate to the profile page with the manufacturer parameter
-    router.push(`/profile?model=${model}`);
+    router.push(`/message?model=${model}`);
   };
 
   return (
