@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs';
 import { FlowbiteNavBar, Footer } from '@/components';
+import ToasterContext from './context/ToasterContext';
 
 
 
@@ -20,15 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+   
     <html lang="en">
      
       <body className='relative'>
-      <FlowbiteNavBar/>
+        <ToasterContext/>
+      
         {children}
-        <Footer/>
+       
         </body>
     </html>
-    </ClerkProvider>
+    
   )
 }
