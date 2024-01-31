@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { CarProps2 } from '@/types';
 
 import { calculateCarRent, generateCarImageUrl } from '@/utils';
-import CarDetails2 from '../../../components/CarDetails2';
+import CarDetails2 from '../../../../components/CarDetails2';
 import { useRouter } from 'next/navigation';
 import CustomButtonProfile from './CustomButtonProfile';
 import { Avatar, Rating } from 'flowbite-react';

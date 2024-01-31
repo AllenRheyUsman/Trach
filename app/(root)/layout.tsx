@@ -9,7 +9,7 @@ export default function RootLayout({
 }>) {
   return (
    
-    <div className=" flex h-screen flex-col ">  
+    <div className=" relative ">  
      <FlowbiteNavBar/> 
           
       <main  className="flex-1">{children}</main>

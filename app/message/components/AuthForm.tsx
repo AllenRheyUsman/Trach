@@ -25,7 +25,7 @@ const AuthForm = () => {
             router.push('/users')
 
         }
-    }, [session?.status]);
+    }, [session?.status, router]);
 
     const toggleVariant = useCallback(()=>{
         if ( variant === "LOGIN"){
@@ -69,6 +69,7 @@ const AuthForm = () => {
                 }
                 if (callback?.ok && !callback?.error){
                     toast.success('Succesfully logged in!')
+                    router.push('/users')
                 }
             })
             .finally(()=>setIsLoading(false))

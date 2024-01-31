@@ -4,6 +4,7 @@ import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs';
 import { FlowbiteNavBar, Footer } from '@/components';
 import ToasterContext from './context/ToasterContext';
+import AuthContext from './context/AuthContext';
 
 
 
@@ -21,16 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   
+   <AuthContext>
     <html lang="en">
      
-      <body className='relative'>
+      <body className='flex h-screen flex-col'>
         <ToasterContext/>
       
         {children}
        
         </body>
     </html>
+    </AuthContext>
     
   )
 }

@@ -1,4 +1,5 @@
 import { MouseEventHandler, ReactNode } from "react";
+import {  Conversation, Message, User } from "@prisma/client";
 
 export interface CarProps {
   message: ReactNode;
@@ -206,3 +207,13 @@ export const ratingsOptions: CheckboxOption[] = [
   { label: 'Offline', value: 'Germany4' },
 ];
 
+
+export type FullMessageType = Message & {
+  sender: User, 
+  seen: User[]
+};
+
+export type FullConversationType = Conversation & { 
+  users: User[]; 
+  messages: FullMessageType[]
+};

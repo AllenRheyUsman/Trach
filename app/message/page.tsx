@@ -20,9 +20,9 @@ const Page = () => {
 
   return (
    <>
-   <AuthContext>
+   
      <Home/>
-   </AuthContext>
+   
        
     </>
   );
