@@ -12,7 +12,7 @@ const Home = () => {
           </Link>
             
             <h2 className='mt-6 text-center text-3xl font-bold tracking-tight text-gray-900'>
-                Currently Developing this page asynchronously with the messaging page. You can either contact the developer -which is me(Allen) to grant you access via google or log-in using github or your own personal credentials. Click the logo if you want to go back home.
+              Currently developing Log-in page and messaging page but you can sign-up to try the messaging features of this app. If you choose to sign-up using google please contact me to grant you access
             </h2>
             <p>
               
