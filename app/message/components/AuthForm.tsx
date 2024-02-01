@@ -10,6 +10,8 @@ import axios from 'axios';
 import {toast} from 'react-hot-toast';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { RadioGroup } from '@headlessui/react';
+import { Checkbox, Label } from 'flowbite-react';
 
 
 type Variant = "LOGIN" | 'REGISTER';
@@ -91,17 +93,17 @@ const AuthForm = () => {
         .finally(()=> setIsLoading(false));
     }
   return (
-    <div className='mt-8 sm:mx-auto sm:w-full sm:max-w-md'>
-        <div className='bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10'>
+    <div className='mt-5 sm:mx-auto sm:w-full sm:max-w-md gap-5 relative justify-start'>
+        <div className='bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10 p-0 '>
         <form 
-            className='space-y-6'
+            className='space-y-10 '
             onSubmit={handleSubmit(onSubmit)}
         >
             {variant === 'REGISTER' && (
             <Input label='name' register={register} id={'name'} errors={errors} type='name'/>
             
             )}
-
+             
             <Input label='Email address' register={register} id={'email'} errors={errors} type='email'/>
             <Input label='Password' register={register} id={'password'} errors={errors} type='password'/>
             <div>
@@ -109,12 +111,23 @@ const AuthForm = () => {
                     disabled={isLoading}
                     fullWidth
                     type='submit'
+                   
+                
                 >
                     {variant==='LOGIN' ? 'Sign-in' : 'Register'}
                 </Button>
             </div>
+             
+            <div className="flex items-center gap-2">
+        <Checkbox id="accept"   color={"purple"}/>
+        <Label htmlFor="accept" className="flex">
+           Remember me
+        </Label>
+      </div>
+
+
         </form>
-        <div className='mt-6'>
+        <div className='mt-10'>
             <div className='relative'>
                 <div className='absolute inset-0 flex items-center'>
                     <div className='w-full border-t border-gray-300'/>
@@ -128,19 +141,19 @@ const AuthForm = () => {
                         </span>
                     </div>
             </div>
-                <div className='mt-6 flex gap-2'>
+                <div className=' flex gap-2 my-10'>
                    <AuthSocialButton icon={BsGithub } onClick={()=> socialAction('github')}/>
                    <AuthSocialButton icon={BsGoogle } onClick={()=> socialAction('google')}/>
 
                 </div>
         </div>
-            <div className='flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500'>
+            <div className='flex gap-2 justify-start text-sm mt-10 px-2 text-gray-500'>
                 <div className=''>
-                    {variant=== 'LOGIN'? 'New to Trach App?': "Already registered?"}
+                    {variant=== 'LOGIN'? 'Need help?': "Already registered?"}
                 </div>
                 <div
                     onClick={toggleVariant}
-                    className='underline cursor-pointer'
+                    className='underline cursor-pointer font-semibold text-purple-500'
                 >
                  {variant=== 'LOGIN'?'Create an Account': "Login"}
                 </div>

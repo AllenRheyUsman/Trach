@@ -55,7 +55,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
           absolute 
           block 
           rounded-full 
-          ${isActive ? 'bg-green-500' : 'bg-rose-500'}  {/* Conditional class rendering */}
+          ${isActive ? 'bg-green-500' : 'bg-red-500'}  {/* Conditional class rendering */}
           ring-2 
           ring-white 
           top-0 

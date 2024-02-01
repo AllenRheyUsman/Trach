@@ -34,7 +34,10 @@ const Input: React.FC<InputProps> = ({
             leading-6
             text-gray-900
         '>
-            {label}
+                <span className='font-bold text-purple-800'>
+                {label}
+                </span>
+           
             <div className='mt-2'>
                 <input 
                     id={id}
@@ -55,9 +58,10 @@ const Input: React.FC<InputProps> = ({
                         ring-1
                         placeholder:text-gray-400
                         focus:ring-2 
-                        focus:ring-sky-600
+                        focus:ring-purple-600
                         sm:text-sm
                         sm:leading-6
+                       
 
                     `, errors[id]&& "focus:ring-rose-500", disabled && "opacity-50 cursor-default")}
                  />
