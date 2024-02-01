@@ -13,7 +13,7 @@ import Avatar from '@/components/Avatar';
 import AvatarGroup from '@/components/AvatarGroup';
 import Modal from '@/components/modals/Modal';
 import ConfirmModal from './ConfirmModal';
-// import ConfirmModal from './ConfirmModal';
+
 
 interface ProfileDrawerProps {
   isOpen: boolean;
@@ -30,7 +30,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const otherUser = useOtherUser(data);
-//   const [isModalOpen, setIsModalOpen] = useState(false);
+
   
   const joinedDate = useMemo(() => {
     return format(new Date(otherUser.createdAt), 'PP');

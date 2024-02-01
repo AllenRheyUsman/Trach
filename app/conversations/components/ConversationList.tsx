@@ -11,26 +11,26 @@ import { find, uniq } from 'lodash';
 
 import useConversation from "@/app/hooks/useConversation";
 // import { pusherClient } from "@/app/libs/pusher";
-import GroupChatModal from "@/components/modals/GroupChatModal";
+import GroupChatModal from "./GroupChatModal";
 
 import { FullConversationType } from "@/types";
 import ConversationBox from "./ConversationBox";
 
 interface ConversationListProps {
   initialItems: FullConversationType[];
-  // users: User[];
+  users: User[];
   // title?: string;
 }
 
 const ConversationList: React.FC<ConversationListProps> = ({ 
   initialItems, 
-  // users
+  users
 }) => {
   const [items, setItems] = useState(initialItems);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const router = useRouter();
-  // const session = useSession();
+  const session = useSession();
 
   const { conversationId, isOpen } = useConversation();
 
@@ -81,11 +81,11 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
   return (
     <>
-      {/* <GroupChatModal 
+      <GroupChatModal 
         users={users} 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)}
-      /> */}
+      />
       <aside className={clsx(`
         fixed 
         inset-y-0 
