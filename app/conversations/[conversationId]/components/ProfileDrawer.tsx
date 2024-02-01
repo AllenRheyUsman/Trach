@@ -30,6 +30,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const otherUser = useOtherUser(data);
+  
 
   
   const joinedDate = useMemo(() => {
@@ -48,8 +49,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
       return `${data.users.length} members`;
     }
 
-    return 'Active' 
-  }, [data,]);
+    return isActive ? 'Active' : "Offline" ;
+  }, [data, isActive]);
 
   return (
     <>

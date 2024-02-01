@@ -5,6 +5,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { FlowbiteNavBar, Footer } from '@/components';
 import ToasterContext from './context/ToasterContext';
 import AuthContext from './context/AuthContext';
+import ActiveStatus from '@/components/ActiveStatus';
 
 
 
@@ -27,6 +28,7 @@ export default function RootLayout({
      
       <body className='flex h-screen flex-col'>
         <ToasterContext/>
+        <ActiveStatus/>
       
         {children}
        
