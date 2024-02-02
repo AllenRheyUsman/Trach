@@ -13,6 +13,11 @@ import Avatar from '@/components/Avatar';
 import AvatarGroup from '@/components/AvatarGroup';
 import Modal from '@/components/modals/Modal';
 import ConfirmModal from './ConfirmModal';
+import { List,  Rating } from 'flowbite-react';
+import Listprofile from './List';
+import Image from 'next/image';
+import { BsGraphUpArrow } from 'react-icons/bs';
+import { LuClock4 } from "react-icons/lu";
 
 
 interface ProfileDrawerProps {
@@ -69,7 +74,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-          <div className="fixed inset-0 bg-black bg-opacity-40" />
+          <div className="fixed inset-0 " />
         </Transition.Child>
 
           <div className="fixed inset-0 overflow-hidden">
@@ -91,7 +96,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                           <div className="ml-3 flex h-7 items-center">
                             <button
                               type="button"
-                              className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                              className="rounded-md  text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                               onClick={onClose}
                             >
                               <span className="sr-only">Close panel</span>
@@ -100,18 +105,30 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                           </div>
                         </div>
                       </div>
-                      <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                        <div className="flex flex-col items-center">
-                          <div className="mb-2">
-                            {data.isGroup ? <AvatarGroup users={data.users} /> : <Avatar user={otherUser} />}
+                      <div className="relative  flex-1 px-4 sm:px-6">
+                        <div className="flex flex-col items-center bg-white p-5 rounded-lg">
+                          <div className=''>
+                            <Image src={"/slack2.png"}  alt={"sdasd"} width={80} height={10}/>
                           </div>
-                          <div>
+                          <div className="my-2">
+                            {data.isGroup ? <AvatarGroup users={data.users} /> : <Avatar user={otherUser} size='large'/>}
+                          </div>
+                          <p>
+                            Slack
+                          </p>
+                          <div className='text-purple-500 text-2xl font-bold my-2'>
                             {title}
+                          </div>
+                          <div className='mb-2'>
+                            <Rating>
+                              <Rating.Star/><Rating.Star/><Rating.Star/><Rating.Star/><Rating.Star filled={false}/>
+                              <p className="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.5k reviews</p>
+                            </Rating>
                           </div>
                           <div className="text-sm text-gray-500">
                             {statusText}
                           </div>
-                          <div className="flex gap-10 my-8">
+                          {/* <div className="flex gap-10 my-8 bg-neutral-200 w-full">
                             <div onClick={() => setConfirmOpen(true)} className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75">
                               
                               <div  className="w-10 h-10 bg-neutral-100 rounded-full flex items-center justify-center">
@@ -121,18 +138,20 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                 Delete
                               </div>
                             </div>
-                          </div>
-                        <div className="w-full pb-5 pt-5 sm:px-0 sm:pt-0">
-                        <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
+                          </div> */}
+
+                        <div className="w-full pb-5 mt-10 pt-5 sm:px-0 sm:pt-0 gap-5 ">
+                        <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6 ">
                           {data.isGroup && (
                             <div>
+                               
                               <dt 
                                 className="
-                                  text-sm 
-                                  font-medium 
-                                  text-gray-500 
+                                text-md
+                                font-bold
+                                  text-purple-500 
                                   sm:w-40 
-                                  sm:flex-shrink-0
+                                  sm:flex-shrink-0 hover:text-purple-700  cursor-pointer
                                 "
                               >
                                 Emails
@@ -150,17 +169,23 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                             </div>
                           )}
                           {!data.isGroup && (
-                            <div>
+                            <div >
+                               
+                                
                               <dt 
-                                className="
-                                  text-sm 
-                                  font-medium 
-                                  text-gray-500 
-                                  sm:w-40 
-                                  sm:flex-shrink-0
-                                "
+                                 className="
+                                 text-md
+                                 font-bold 
+                                 text-purple-500 
+                                 sm:w-40 
+                                 sm:flex-shrink-0 hover:text-purple-700  cursor-pointer
+                                 flex flex-1
+                                 gap-5
+                               "
                               >
-                                Email
+                                <LuClock4 />
+                                
+                                Avg sale time
                               </dt>
                               <dd 
                                 className="
@@ -168,9 +193,12 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                   text-sm 
                                   text-gray-900 
                                   sm:col-span-2
+                                  ml-9
                                 "
                               >
+                                
                                 {otherUser.email}
+                               
                               </dd>
                             </div>
                           )}
@@ -180,14 +208,19 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                               <div>
                                 <dt 
                                   className="
-                                    text-sm 
-                                    font-medium 
-                                    text-gray-500 
+                                    text-md
+                                    font-bold 
+                                    text-purple-500 
                                     sm:w-40 
-                                    sm:flex-shrink-0
+                                    sm:flex-shrink-0 hover:text-purple-700  cursor-pointer
+                                    flex flex-1
+                                    gap-5
                                   "
                                 >
-                                  Joined
+                                   <BsGraphUpArrow />
+                                 <p >
+                                  Sold last month
+                                 </p>
                                 </dt>
                                 <dd 
                                   className="
@@ -195,6 +228,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                     text-sm 
                                     text-gray-900 
                                     sm:col-span-2
+                                    ml-9
                                   "
                                 >
                                   <time dateTime={joinedDate}>
@@ -202,10 +236,125 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                   </time>
                                 </dd>
                               </div>
+                               
+                            </>
+                          )}
+
+{!data.isGroup && (
+                            <>
+                              <hr />
+                              <div>
+                                <dt 
+                                  className="
+                                    text-md
+                                    font-bold 
+                                    text-purple-500 
+                                    sm:w-40 
+                                    sm:flex-shrink-0 hover:text-purple-700  cursor-pointer
+                                    flex flex-1
+                                    gap-5
+                                  "
+                                >
+                                   <BsGraphUpArrow />
+                                 <p >
+                                  Sold last month
+                                 </p>
+                                </dt>
+                                <dd 
+                                  className="
+                                    mt-1 
+                                    text-sm 
+                                    text-gray-900 
+                                    sm:col-span-2
+                                    ml-9
+                                  "
+                                >
+                                  <time dateTime={joinedDate}>
+                                    {joinedDate}
+                                  </time>
+                                </dd>
+                              </div>
+                               
+                            </>
+                          )}
+
+{!data.isGroup && (
+                            <>
+                              <hr />
+                              <div>
+                                <dt 
+                                  className="
+                                    text-md
+                                    font-bold 
+                                    text-purple-500 
+                                    sm:w-40 
+                                    sm:flex-shrink-0 hover:text-purple-700  cursor-pointer
+                                    flex flex-1
+                                    gap-5
+                                  "
+                                >
+                                   <BsGraphUpArrow />
+                                 <p >
+                                  Sold last month
+                                 </p>
+                                </dt>
+                                <dd 
+                                  className="
+                                    mt-1 
+                                    text-sm 
+                                    text-gray-900 
+                                    sm:col-span-2
+                                    ml-9
+                                  "
+                                >
+                                  <time dateTime={joinedDate}>
+                                    {joinedDate}
+                                  </time>
+                                </dd>
+                              </div>
+                               
+                            </>
+                          )}
+                           {!data.isGroup && (
+                            <>
+                              <hr />
+                              <div>
+                                <dt 
+                                  className="
+                                    text-md
+                                    font-bold 
+                                    text-purple-500 
+                                    sm:w-40 
+                                    sm:flex-shrink-0 hover:text-purple-700  cursor-pointer
+                                    flex flex-1
+                                    gap-5
+                                  "
+                                >
+                                   <BsGraphUpArrow />
+                                 <p >
+                                  Sold last month
+                                 </p>
+                                </dt>
+                                <dd 
+                                  className="
+                                    mt-1 
+                                    text-sm 
+                                    text-gray-900 
+                                    sm:col-span-2
+                                    ml-9
+                                  "
+                                >
+                                  <time dateTime={joinedDate}>
+                                    {joinedDate}
+                                  </time>
+                                </dd>
+                              </div>
+                               
                             </>
                           )}
                         </dl>
                       </div>
+                          
                         </div>
                       </div>
                     </div>
@@ -213,8 +362,11 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                 </Transition.Child>
               </div>
             </div>
+          
           </div>
+        
         </Dialog>
+        
       </Transition.Root>
     </>
   )

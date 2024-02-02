@@ -4,6 +4,8 @@
 import { User } from "@prisma/client";
 
 import UserBox from "./UserBox";
+import { Label, TextInput } from "flowbite-react";
+import { MdSearch } from "react-icons/md";
 
 interface UserListProps {
   items: User[];
@@ -38,7 +40,12 @@ const UserList: React.FC<UserListProps> = ({
               py-4
             "
           >
-            Agents
+             <div className="max-w-md">
+      <div className="mb-2 block">
+        <Label htmlFor="email4" value="Agents" />
+      </div>
+      <TextInput id="email4" type="email" rightIcon={MdSearch} placeholder="Find Agents" required />
+    </div>
           </div>
         </div>
         {items.map((item) => (

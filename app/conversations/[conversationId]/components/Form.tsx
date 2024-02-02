@@ -3,6 +3,7 @@ import useConversation from "@/app/hooks/useConversation";
 import axios from "axios";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { HiPaperAirplane, HiPhoto } from "react-icons/hi2";
+import { FaRegPaperPlane } from "react-icons/fa";
 import MessageInput from "./MessageInput";
 import {CldUploadButton} from "next-cloudinary"
 
@@ -54,7 +55,7 @@ const Form = () => {
             onUpload={handleUpload}
             uploadPreset="yepljdkc"
         >
-         <HiPhoto size={30} className="text-sky-500" />
+         <HiPhoto size={30} className="text-purple-500" />
         </CldUploadButton>
          <form 
         onSubmit={handleSubmit(onSubmit)} 
@@ -70,17 +71,17 @@ const Form = () => {
           <button 
           type="submit" 
           className="
-            rounded-full 
-            p-2 
-            bg-sky-500 
+            rounded-md 
+            p-3 
+            bg-purple-500 
             cursor-pointer 
-            hover:bg-sky-600 
+            hover:bg-purple-600 
             transition
           "
         >
-          <HiPaperAirplane
-            size={18}
-            className="text-white"
+          <FaRegPaperPlane
+            size={25}
+            className="text-white "
           />
         </button>
 

@@ -3,8 +3,10 @@ import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 import {  User } from "@prisma/client";
 
+import Image from "next/image";
 import Avatar from "@/components/Avatar";
 import LoadingModal from "@/components/modals/LoadingModal";
+import { Rating,  } from "flowbite-react";
 
 interface UserBoxProps {
   data: User
@@ -15,6 +17,10 @@ const UserBox: React.FC<UserBoxProps> = ({
 }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+
+  
+
+  
 
   const handleClick = useCallback(() => {
     setIsLoading(true);
@@ -47,12 +53,20 @@ const UserBox: React.FC<UserBoxProps> = ({
           cursor-pointer
         "
       >
+       <Rating size={'md'}>
+        <span >
+        <Rating.Star filled={false} />
+        </span>
+       
+       </Rating>
         <Avatar user={data} />
         <div className="min-w-0 flex-1">
+          
           <div className="focus:outline-none">
             {/* <span className="absolute inset-0" aria-hidden="true" /> */}
             <div className="flex justify-between items-center mb-1">
-              <p className="text-sm font-medium text-gray-900">
+              
+              <p className="text-md font-bold text-purple-900">
                 {data.name}
               </p>
             </div>

@@ -4,7 +4,7 @@ import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useEffect, useMemo, useState } from "react";
-import { MdOutlineGroupAdd } from 'react-icons/md';
+import { MdOutlineGroupAdd, MdSearch } from 'react-icons/md';
 import clsx from "clsx";
 import { find, uniq } from 'lodash';
 
@@ -15,6 +15,9 @@ import GroupChatModal from "./GroupChatModal";
 
 import { FullConversationType } from "@/types";
 import ConversationBox from "./ConversationBox";
+import Input from "@/app/message/components/inputs/Input";
+import { RegisterOptions, FieldValues, UseFormRegisterReturn } from "react-hook-form";
+import { Label, TextInput } from "flowbite-react";
 
 interface ConversationListProps {
   initialItems: FullConversationType[];
@@ -112,7 +115,12 @@ const ConversationList: React.FC<ConversationListProps> = ({
         <div className="px-5">
           <div className="flex justify-between mb-4 pt-4">
             <div className="text-2xl font-bold text-neutral-800">
-              Messages
+            <div className="max-w-md">
+                <div className="mb-2 block">
+                  <Label htmlFor="users" value="Conversations" />
+                </div>
+                <TextInput id="users" type="email" rightIcon={MdSearch} placeholder="Recent Conversations" />
+              </div>
             </div>
             <div 
               onClick={() => setIsModalOpen(true)} 
