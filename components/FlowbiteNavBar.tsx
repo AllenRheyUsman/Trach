@@ -45,26 +45,10 @@ const FlowbiteNavBar:React.FC<FlowbiteNavBarProps> = ({
   <>
          
          <SettingsModal currentUser={currentUser} isOpen={isOpen} onClose={() => setIsOpen(false)} />
-      <div className="
-        hidden 
-        lg:fixed 
-        lg:inset-y-0 
-        lg:left-0 
-        lg:z-40 
-        lg:w-20 
-        xl:px-6
-        lg:overflow-y-auto 
-        lg:bg-white 
-        lg:border-r-[1px]
-        lg:pb-4
-        lg:flex
-        lg:flex-col
-        justify-between
-      ">
-        </div>
+      
      
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 max-w-[1440px] mx-auto z-50">
-      <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 w-full mx-auto z-50">
+      <div className="flex flex-wrap items-center justify-between  mx-auto p-4">
         <Link href={"/"} className='flex justify-center items-center'>
           <Image
             src="/logo-new.svg"
@@ -85,7 +69,7 @@ const FlowbiteNavBar:React.FC<FlowbiteNavBarProps> = ({
         <div id="mega-menu1" className={`items-center justify-end ${isDropdown1Open ? 'flex' : 'hidden'} h-8 border-r border-gray-400 sm:hidden w-full md:flex md:w-auto md:order-1`}>
   <ul className="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-4 rtl:space-x-reverse">
             <li>
-              <Link href={"/under-construction"}>
+              <Link href={"/"}>
              
               <CustomButton
                 title="Home"
@@ -221,33 +205,41 @@ const FlowbiteNavBar:React.FC<FlowbiteNavBarProps> = ({
         <div id="mega-menu" className={`items-center justify-end ${isDropdownOpen ? 'flex' : 'hidden'} md:hidden w-full md:w-auto md:order-1`}>
   <ul className="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-4 rtl:space-x-reverse">
             <li>
-              
+              <Link href={"/"}>
+             
               <CustomButton
                 title="Home"
                 btnType="button"
                 containerStyles='text-[#290F6A] rounded-full bg-white  font-semibold'
               />
+               </Link>
             </li>
             <li>
+            <Link href={"/under-construction"}>
               <CustomButton
                 title="To Sell"
                 btnType="button"
                 containerStyles='text-gray-500 rounded-full bg-white'
               />
+              </Link>
             </li>
             <li>
+            <Link href={"/under-construction"}>
               <CustomButton
                 title="To Rent"
                 btnType="button"
                 containerStyles='text-gray-500 rounded-full bg-white'
               />
+              </Link>
             </li>
             <li>
+            <Link href={"/under-construction"}>
               <CustomButton
                 title="Blog"
                 btnType="button"
                 containerStyles='text-gray-500 rounded-full bg-white'
               />
+            </Link>
             </li>
          
           

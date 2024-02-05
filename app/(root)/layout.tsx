@@ -1,16 +1,18 @@
 import { FlowbiteNavBar, Footer } from "@/components";
+import getCurrentUser from "../actions/getCurrentUser";
 
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const currentUser = await getCurrentUser()
   return (
    
     <div className=" relative ">  
-     <FlowbiteNavBar/> 
+     <FlowbiteNavBar currentUser={currentUser!}/> 
           
       <main  className="flex-1">{children}</main>
       <Footer/>

@@ -41,10 +41,10 @@ export const authOptions: AuthOptions={
                     credentials.password,
                     user.hashedPassword
                 );
-                if(!isCorrectPassword){
-                    throw new Error ('Invalid credentials');
-                }
-                return user;
+               if (!isCorrectPassword){
+                throw new Error ('Invalid credentials');
+               }
+               return user;
             }
         })
     ],

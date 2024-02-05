@@ -93,7 +93,7 @@ const AuthForm = () => {
         .finally(()=> setIsLoading(false));
     }
   return (
-    <div className='mt-5 sm:mx-auto sm:w-full sm:max-w-md gap-5 relative justify-start'>
+    <div className='lg:mt-5 sm:mt-0 sm:mx-auto sm:w-full sm:max-w-md lg:gap-5 sm:gap-2 relative justify-start '>
         <div className='bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10 p-0 '>
         <form 
             className='space-y-10 '
@@ -106,7 +106,7 @@ const AuthForm = () => {
              
             <Input label='Email address' register={register} id={'email'} errors={errors} type='email'/>
             <Input label='Password' register={register} id={'password'} errors={errors} type='password'/>
-            <div>
+            <div className=''>
                 <Button 
                     disabled={isLoading}
                     fullWidth
@@ -127,7 +127,7 @@ const AuthForm = () => {
 
 
         </form>
-        <div className='mt-10'>
+        <div className='lg:mt-10 sm:mt-0'>
             <div className='relative'>
                 <div className='absolute inset-0 flex items-center'>
                     <div className='w-full border-t border-gray-300'/>
@@ -141,7 +141,7 @@ const AuthForm = () => {
                         </span>
                     </div>
             </div>
-                <div className=' flex gap-2 my-10'>
+                <div className=' flex gap-2 lg:my-10 sm:my-2'>
                    <AuthSocialButton icon={BsGithub } onClick={()=> socialAction('github')}/>
                    <AuthSocialButton icon={BsGoogle } onClick={()=> socialAction('google')}/>
 
