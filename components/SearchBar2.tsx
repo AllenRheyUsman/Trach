@@ -35,6 +35,7 @@ const SearchBar2 = () => {
 
       // After updating search parameters, navigate to "/result"
       router.push(`/result?manufacturer=${manufacturer}`);
+      //**change to location */
 
     } catch (error) {
       console.error('Error updating search parameters:', error);

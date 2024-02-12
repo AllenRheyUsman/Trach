@@ -29,7 +29,7 @@ const ProfileCard = ({ car }: CarCardProps2) => {
   };
 
   return (
-    <div className='w-full+ shadow-sm flex flex-col p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl group '>
+    <div className='shadow-sm p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl group  h-full z-50 mx-5'>
       {/* Gas efficiency and drive information */}
       <div className='relative flex w-full'>
         <div className='flex w-full justify-center text-gray py-3 ml-auto'>
@@ -95,13 +95,13 @@ const ProfileCard = ({ car }: CarCardProps2) => {
             // handleClick={() => setIsOpen(true)}
             handleClick={handleViewProfile}/>
       </div>
-      <div>
+      <div className='overflow-hidden'>
         <AccordionProfile
           title1="Services"
           title2="View More"
          
           content1={Object.entries(car).map(([key, value]) => (
-            <div className='flex  gap-5 space-x-1 w-full text-left ' key={key}>
+            <div className='flex  gap-5 space-x-1 w-full text-left overflow-hidden' key={key}>
               {/* First column (image) */}
               <div className="flex items-start text-start py-2">
                 <Image src={"/clock.svg"} alt={"time"} width={15} height={15} className=" " />

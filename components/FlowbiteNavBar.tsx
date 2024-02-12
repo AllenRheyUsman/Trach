@@ -9,7 +9,6 @@ import { User } from "@prisma/client";
 import { Dropdown, } from 'flowbite-react';
 import SettingsModal from './sidebar/SettingsModal';
 import useRoutes from '@/app/hooks/useRoutes';
-import DesktopItem from './sidebar/DesktopItem';
 import ProfileItem from './sidebar/ProfileItem';
 
 

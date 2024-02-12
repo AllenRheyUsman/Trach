@@ -2,10 +2,9 @@
 import React from 'react'
 
 
-import { FlowbiteNavBar } from '@/components';
+
 import EmptyState from '@/components/EmptyState';
-import SideBar from '@/components/sidebar/SideBar';
-import DesktopSideBar from '@/components/sidebar/DesktopSideBar';
+
 
 const Users= () => {
   return (

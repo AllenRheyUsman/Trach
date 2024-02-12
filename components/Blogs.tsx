@@ -23,7 +23,7 @@ function Blogs() {
         {images.slice(0, 3).map((image) => (
           <Card
             key={image.id}
-            className="max-w-sm"
+            className="max-w-sm hover:shadow-lg  hover:-translate-y-1 hover:scale-105 transition-transform duration-300"
             imgAlt={image.title}
             imgSrc={image.src}
           >
@@ -34,7 +34,7 @@ function Blogs() {
               {image.desc}
             </p>
             <Link href={"/under-construction"}>
-            <Button color="purple" pill className='bg-transparent text-[#9300FF] hover:text-white'>
+            <Button color="purple" pill className='bg-transparent text-[#9300FF] hover:text-white ransition-transform duration-200'>
               Read more
               <svg
                 className="-mr-1 ml-2 h-4 w-4"

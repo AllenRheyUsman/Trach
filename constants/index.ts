@@ -177,6 +177,59 @@ export const postal_codes =[
       ],
     },
   ]
+ // /constants/index.ts
+
+export const newsOutlets = [
+  {
+    src: '/Abilene.png',
+    alt: 'Abilene',
+    width: 250,
+    height: 150,
+  },
+  {
+    src: '/Informația.png',
+    alt: 'Informația',
+    width: 250,
+    height: 150,
+  },
+  {
+    src: '/Burlington.png',
+    alt: 'Burlington',
+    width: 250,
+    height: 150,
+  },
+  {
+    src: '/TNYT.png',
+    alt: 'TNYT',
+    width: 250,
+    height: 150,
+  },
+  {
+    src: '/Courier.png',
+    alt: 'Courier',
+    width: 250,
+    height: 150,
+  },
+  {
+    src: '/The_Salinas.png',
+    alt: 'The Salinas',
+    width: 250,
+    height: 150,
+  },
+  {
+    src: '/Clarion.png',
+    alt: 'Clarion',
+    width: 250,
+    height: 150,
+  },
+  {
+    src: '/Skagit.png',
+    alt: 'Skagit',
+    width: 250,
+    height: 150,
+  },
+];
+
     export const images = [
       {
         id: 1,
@@ -210,4 +263,28 @@ export const postal_codes =[
       },
     ];
     
-    
+    // /constants/findings.ts
+
+export const findings = [
+  {
+    id: 1,
+    iconSrc: '/mag.svg',
+    title: 'Search Agents',
+    description:
+      'Enter your city, town or postcode in our user friendly search bar to explore the top real estate agents in your area.',
+  },
+  {
+    id: 2,
+    iconSrc: '/profile.svg',
+    title: 'Compare Agents',
+    description:
+      'View agent profiles, read reviews, and compare metrics side by side to narrow down your options.',
+  },
+  {
+    id: 3,
+    iconSrc: '/profileplus.svg',
+    title: 'Connect with Agent',
+    description:
+      'Once you\'ve found your ideal match, connect with the agent directly through TRACH and start your real estate journey with confidence.',
+  },
+];

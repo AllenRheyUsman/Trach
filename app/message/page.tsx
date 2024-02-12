@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Home from './components/Home';
-import AuthContext from '../context/AuthContext';
-import { FlowbiteNavBar } from '@/components';
+
 
 const Page = () => {
   const [showJumbotron, setShowJumbotron] = useState(false);

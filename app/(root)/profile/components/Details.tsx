@@ -11,7 +11,7 @@ import Reviews from './Reviews'
 
 const Details = () => {
   return (
-    <div className='mb-10'>
+    <div className='  flex flex-wrap w-[75%] gap-5 right-0 mr-0 ml-2'>
         <DetailsNavBar manufacturer={''} setManuFacturer={function (manufacturer: string): void {
               throw new Error('Function not implemented.')
           } }/>

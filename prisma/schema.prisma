@@ -74,3 +74,4 @@ model Message{
     SenderId String @db.ObjectId
     sender User @relation( fields:[SenderId], references: [id], onDelete:Cascade)
 }
+

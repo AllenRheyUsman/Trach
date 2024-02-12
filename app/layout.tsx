@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 
 import './globals.css'
-import { ClerkProvider } from '@clerk/nextjs';
-import { FlowbiteNavBar, Footer } from '@/components';
+ 
 import ToasterContext from './context/ToasterContext';
 import AuthContext from './context/AuthContext';
 import ActiveStatus from '@/components/ActiveStatus';

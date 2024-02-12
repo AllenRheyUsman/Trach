@@ -51,13 +51,13 @@ const ProfilePage = ({ searchParams }: HomeProps2) => {
 
 
   return (
-    <main className="hero h-full  ">
+    <main className="hero  ">
     
       
-      <section className="grid grid-cols-2 mt-10 hero ">
+      <section className="flex flex-wrap mt-10 hero">
        
         {!isDataEmpty ? (
-          <div className=' hero '>
+          <div className=''>
             {allCars.slice((currentPage - 1) * 1, currentPage * 1).map((car) => (
               <ProfileCard key={car.model} car={car} />
             ))}
