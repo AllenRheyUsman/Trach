@@ -2,25 +2,25 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { CarProps2 } from '@/types';
+import { AgentProps } from '@/types';
 import { CustomButton } from '.';
-import { calculateCarRent, generateCarImageUrl } from '@/utils';
+ 
 import CarDetails2 from './CarDetails2';
 import { useRouter } from 'next/navigation';
 
-interface CarCardProps2 {
-  car: CarProps2;
+interface AgentCardProps2 {
+  agent: AgentProps;
 }
 
-const CarCard2 = ({ car }: CarCardProps2) => {
-  const { city_mpg, year, make, model,  drive } = car;
+const AgentCard2 = ({ agent }: AgentCardProps2) => {
+  const {full_name,  address, agent_rating , types, title, href   } = agent;
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter(); // Initialize the router
 
-  const carRent = calculateCarRent(city_mpg, year);
+   
   const handleViewProfile = () => {
     // Use the router to navigate to the profile page with the manufacturer parameter
-    router.push(`/profile?model=${model}`);
+    router.push(`/profile?agentname=${full_name}`);
   };
 
   return (
@@ -31,16 +31,16 @@ const CarCard2 = ({ car }: CarCardProps2) => {
           <div className='flex flex-wrap justify-center items-center gap-2'>
             <Image src={"/gas.svg"} width={20} height={20} alt='gas' />
             <p className='text-[14px] rounded-full'>
-              {city_mpg}
+              {full_name}
             </p>
           </div>
           <div className='flex flex-col justify-center items-center gap-2'></div>
-          <div className='flex flex-wrap justify-center items-center gap-2 '>
+          {/* <div className='flex flex-wrap justify-center items-center gap-2 '>
             <span className={`bg-${drive.toUpperCase() === 'FWD' ? 'red-500' : 'green-500'} h-[10px] w-[10px] rounded-full`}></span>
             <p className={`text-${drive.toUpperCase() === 'FWD' ? 'red-500' : 'green-500'} text-[14px]`}>
               {drive.toUpperCase()=== 'FWD' ? 'Offline' : 'Online'}
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -48,16 +48,16 @@ const CarCard2 = ({ car }: CarCardProps2) => {
       <div className='flex bg-[#F8F9FF] w-full  my-3'>
         <div className='flex relative w-fit  px-5'>
           <div className='grid grid-rows-2 '>
-            <Image src={generateCarImageUrl(car)} alt={'avatar'} width={70} height={70} className='rounded-full bg-[#e6dfcf] text-[#eceaf0] object-contain'/>
+            <Image src={href} alt={'avatar'} width={70} height={70} className='rounded-full bg-[#e6dfcf] text-[#eceaf0] object-contain'/>
           </div>
         </div>
         <div className="justify-start mb-3">
-          <div className='car-card__content-title2 pb-2'>{model}</div>
-          <div className='w-full pb-2'>{make}</div>
+          <div className='car-card__content-title2 pb-2'>{full_name}</div>
+          <div className='w-full pb-2'>{agent_rating}</div>
           <div className='flex flex-wrap w-full gap-2'>
             <Image src={'/star2.svg'} alt={''} width={20} height={20} />
             <h1 className='text-[#FF8933] '>
-              {carRent}
+              {types}
             </h1>
             <p>/ 3.5k reviews</p>
           </div>
@@ -143,10 +143,10 @@ const CarCard2 = ({ car }: CarCardProps2) => {
       </div>
 
       {/* Modal for displaying car details */}
-      <CarDetails2 isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} />
+      {/* <CarDetails2 isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} /> */}
     </div>
   );
 };
 
 // Exporting the component
-export default CarCard2;
+export default AgentCard2;

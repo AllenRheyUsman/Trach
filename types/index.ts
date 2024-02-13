@@ -18,15 +18,23 @@ export interface CarProps {
 }
 
 export interface FilterProps {
-  manufacturer?: string;
-  year?: number;
-  model?: string;
-  limit?: number;
-  fuel?: string;
+  location?: string;
+  agentname?: string;
+  page?: number;
+  rating?: number;
+  price?: string;
+}
+
+export interface FilterAgentProps {
+  location?: string;
+  agentname?: string;
+  page?: number;
+  rating?: number;
+  price?: string;
 }
 
 export interface HomeProps {
-  searchParams: FilterProps;
+  searchParams: FilterAgentProps;
 }
 
 export interface CarCardProps {
@@ -51,7 +59,7 @@ export interface CustomButtonProps {
 
 export interface OptionProps {
   title: string;
-  value: string;
+  value: string | number;
 }
 
 export interface CustomFilterProps {
@@ -68,6 +76,10 @@ export interface SearchManuFacturerProps {
   manufacturer: string;
   setManuFacturer: (manufacturer: string) => void;
 }
+export interface SearchLocationProps {
+  location: string;
+  setLocation: (location: string) => void;
+}
 
 // Update your SearchPostCodePropstest interface
 export interface SearchPostCodePropstest {
@@ -77,21 +89,102 @@ export interface SearchPostCodePropstest {
 
 // sdfsdfsdfsf
 
-export interface CarProps2 {
-  message: ReactNode;
-  city_mpg: number;
-  class: string;
-  combination_mpg: number;
-  cylinders: number;
-  displacement: number;
-  drive: string;
-  fuel_type: string;
-  highway_mpg: number;
-  make: string;
-  model: string;
-  transmission: string;
-  year: number;
+export interface AgentProps {
+  mls: {
+    abbreviation: string;
+    member: {
+      id: string;
+      primary: boolean;
+      type: string;
+      name: string;
+      party_id: string;
+    };
+  }[];
+  branding:{
+    name:string
+    photo:null
+    type:string
+  }[];
+  phones:{
+    ext:string
+key:string
+number:string
+type:string
+  
+    
+  }[];
+ 
+  recently_sold:{
+      count:number;
+  }
+  photo: {
+    href: string, // or any other property that holds the image URL
+  },
+  review_count: ReactNode;
+  role: string;
+  nick_name: string;
+  rating: string; // Update this type based on your actual data
+   
+  message: string;
+  address: {
+    city: string;
+    country: string;
+    line: string;
+    line2?: string;
+    postal_code: string;
+    state: string;
+    state_code: string;
+  };
+  advertiser_id: number;
+  agent_rating: number;
+  agent_type: ("buyer" | "seller")[];
+  agent_team_details: {
+    is_team_member: boolean;
+  };
+  background_photo: {
+    href: string;
+  };
+  broker: {
+    accent_color: string;
+    designations: string[];
+    fulfillment_id: number;
+    name: string;
+    photo: {
+      href: string;
+    };
+    video?: string;
+  };
+  description: string;
+  designations: string[];
+  feed_licenses?: FeedLicense[]; // Define a specific type for feed_licenses
+  first_month: number;
+  first_year: number;
+  for_sale_price: {
+    count: number;
+    last_listing_date: string;
+    max: number;
+    min: number;
+  };
+  full_name: string;
+  has_photo: boolean;
+  href: string;
+  id: string;
+  is_realtor: boolean;
+  title: string;
+  types: string[];
+  web_url: string;
 }
+
+interface FeedLicense {
+  // Define the structure of a feed license
+  // Adjust the types based on the actual data structure
+  // For example: license_name, expiration_date, etc.
+  license_name: string;
+  expiration_date: string;
+}
+
+
+
 
 export interface CarCardProps2 {
   model: string;
@@ -113,7 +206,7 @@ export interface FilterProps2 {
 }
 
 export interface HomeProps2 {
-  searchParams: FilterProps2;
+  searchParams: FilterProps;
 }
 
 export interface HomePropstest {
@@ -217,3 +310,4 @@ export type FullConversationType = Conversation & {
   users: User[]; 
   messages: FullMessageType[]
 };
+

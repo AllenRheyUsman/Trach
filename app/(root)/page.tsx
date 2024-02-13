@@ -1,26 +1,22 @@
 
-import { fetchCars } from "@/utils";
+ 
+import { fetchAgent } from "@/utils";
 import { HomeProps } from "@/types";
-import { fuels, yearsOfProduction } from "@/constants";
-import { CarCard,  SearchBar, CustomFilter, Hero, Finding, WhyChoose, AsSeenIn, CarouselBlogs, Blogs, SearchBar2 } from "@/components";
-import ShowMore from "@/components/ShowMore";
-import CarDetails from "@/components/CarDetails";
+ 
+import {   Hero, Finding, WhyChoose, AsSeenIn,  Blogs,  } from "@/components";
+ 
 
 
 
 
 export default async function Home({ searchParams }: HomeProps) {
-  const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
-    fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
-    model: searchParams.model || "",
+  const allAgents = await fetchAgent({
+    
   });
 
 
 
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+  const isDataEmpty = !Array.isArray(allAgents) || allAgents.length < 1 || !allAgents;
 
   return (
     <main className='overflow-hidden'>
@@ -42,37 +38,10 @@ export default async function Home({ searchParams }: HomeProps) {
 </div>
 
 
-        {/* <div className='home__filters'>
-          <SearchBar />
-
-          <div className='home__filter-container'>
-            <CustomFilter title='fuel' options={fuels} />
-            <CustomFilter title='year' options={yearsOfProduction} />
-          </div>
-        </div> */}
-
-        {/* {!isDataEmpty ? (
-          <section>
-            <div className='home__cars-wrapper'>
-              {allCars?.map((car) => (
-                <CarCard car={car} />
-              ))}
-            </div>
-
-            <ShowMore
-              pageNumber={(searchParams.limit || 4) / 4}
-              isNext={(searchParams.limit || +1) > allCars.length}
-            />
-          </section>
-        ) : (
-          <div className='home__error-container'>
-            <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
-            <p>{allCars?.message}</p>
-          </div>
-        )} */}
+        
       </div>
       <AsSeenIn/>
-      {/* <CarouselBlogs/> */}
+    
       
      
      <Blogs/>

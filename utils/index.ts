@@ -1,5 +1,5 @@
 
-import { CarProps, FilterProps, CarProps2 } from "@/types";
+import { CarProps, FilterProps, AgentProps, FilterAgentProps } from "@/types";
 import { CarPropstest, FilterPropstest } from "@/types";
 import { fetchCarsTest } from "./test";
 
@@ -46,33 +46,46 @@ export const deleteSearchParams = (type: string) => {
 };
 export const navigateSearchParams = (type: string, value: string) => {
   const newPathname = updateSearchParams(type, value);
-  window.location.href = `/result${newPathname}`;
+  window.location.href = `/trial${newPathname}`;
 };
-export async function fetchCars(filters: FilterProps) {
-  const { manufacturer, year, model, limit, fuel } = filters;
+
+ 
+  export async function fetchAgent(filters: FilterAgentProps) {
+    const { location, page, rating, price } = filters;
+
+
+  // export async function fetchAgent(){
+     
   
 
  
 
   // Set the required headers for the API request
   const headers: HeadersInit = {
-    // 'X-RapidAPI-Key': 'ddeec46817msh45b32b0ecc215efp1732d0jsnf1ac0705742e',
+    
+    // 'X-RapidAPI-Key': '64442db40fmshdfb58f4b76f04cfp1ed092jsnc3215890b605',
     // 'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
-    'X-RapidAPI-Key': '64442db40fmshdfb58f4b76f04cfp1ed092jsnc3215890b605',
-    'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
+
+    'X-RapidAPI-Key': 'f21b245d93msh8562689b5bb3e8cp166721jsn3f502e010627',
+    'X-RapidAPI-Host': 'realtor16.p.rapidapi.com'
     
   };
 
   // Set the required headers for the API request
   const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    `https://realtor16.p.rapidapi.com/search_agents?location=${location}&page=${page}&rating=${rating}&price=${price}`,
+    // `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    // 'https://realtor16.p.rapidapi.com/search_agents?location=santa%20monica',
     {
       headers: headers,
     }
+    
   );
-
+   
   // Parse the response as JSON
   const result = await response.json();
+
+  
 
   return result;
 }
@@ -92,20 +105,20 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   return `${url}`;
 } 
 
-export const generateCarImageUrl2 = (car: CarProps2, angle?: string) => {
-  const url = new URL("https://cdn.imagin.studio/getimage");
-  const { make, model, year } = car;
+// export const generateCarImageUrl2 = (car: CarProps2, angle?: string) => {
+//   const url = new URL("https://cdn.imagin.studio/getimage");
+//   const { make, model, year } = car;
 
-  url.searchParams.append('customer', "hrjavascript-mastery");
-  url.searchParams.append('make', make);
-  url.searchParams.append('modelFamily', model.split(" ")[0]);
-  url.searchParams.append('zoomType', 'fullscreen');
-  url.searchParams.append('modelYear', `${year}`);
-  // url.searchParams.append('zoomLevel', zoomLevel);
-  url.searchParams.append('angle', `${angle}`);
+//   url.searchParams.append('customer', "hrjavascript-mastery");
+//   url.searchParams.append('make', make);
+//   url.searchParams.append('modelFamily', model.split(" ")[0]);
+//   url.searchParams.append('zoomType', 'fullscreen');
+//   url.searchParams.append('modelYear', `${year}`);
+//   // url.searchParams.append('zoomLevel', zoomLevel);
+//   url.searchParams.append('angle', `${angle}`);
 
-  return `${url}`;
-} 
+//   return `${url}`;
+// } 
 
 
 

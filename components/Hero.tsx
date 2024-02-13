@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { CustomButton, FlowbiteSearch, SearchBar, SearchBar2 } from '.';
-import Image from 'next/image';
+import {   SearchBar2 } from '.';
+ 
 
 const Hero = () => {
     const handleScroll = () => {

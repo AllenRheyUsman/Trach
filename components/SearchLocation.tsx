@@ -3,8 +3,8 @@ import React from 'react'
 import { useState, Fragment } from 'react';
 import Image from 'next/image';
 import { Combobox, Transition } from '@headlessui/react';
-import { SearchManuFacturerProps } from '@/types';
-import { manufacturers } from '@/constants';
+import { SearchLocationProps } from '@/types';
+import { locations } from '@/constants';
 import { SearchBar } from '.';
 
 const SearchButton = ({ title, otherClasses }: { title: string; otherClasses: string }) => (
@@ -20,12 +20,12 @@ const SearchButton = ({ title, otherClasses }: { title: string; otherClasses: st
 
 // ... (other imports)
 
-const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacturerProps) => {
+const SearchLocation = ({ location, setLocation }: SearchLocationProps) => {
   const [query, setQuery] = useState('');
 
-  const filteredManufacturers = query === ''
-    ? manufacturers
-    : manufacturers.filter((item) => (
+  const filteredLocations = query === ''
+    ? locations
+    : locations.filter((item) => (
       item.toLowerCase()
         .replace(/\s+/g, '')
         .includes(query.toLowerCase().replace(/\s+/g, ''))
@@ -33,7 +33,7 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacture
 
   return (
     <div className="search-manufacturer relative shadow-md">
-      <Combobox value={manufacturer} onChange={setManuFacturer}>
+      <Combobox value={location} onChange={setLocation}>
         <div className="flex items-center w-full mx-10 bg-white rounded-lg py-5">
           <Combobox.Button className="absolute">
             <Image
@@ -47,7 +47,7 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacture
           <Combobox.Input
             className="search-manufacturer__input"
             placeholder="City, town or postcode"
-            displayValue={(manufacturer: string) => manufacturer}
+            displayValue={(location: string) => location}
             onChange={(e) => setQuery(e.target.value)}
           />
           <div className="justify-end flex space-x-5 w-full mx-2">
@@ -59,7 +59,7 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacture
         <Combobox.Options
           className="absolute top-full left-5 z-10 "
         >
-          {filteredManufacturers.map((item) => (
+          {filteredLocations.map((item) => (
             <Combobox.Option
               key={item}
               value={item}
@@ -94,5 +94,5 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacture
   );
 };
 
-export default SearchManufacturer;
+export default SearchLocation;
 

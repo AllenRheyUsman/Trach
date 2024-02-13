@@ -1,7 +1,7 @@
 import AsSeenIn from './AsSeenIn';
 import Blogs from './Blogs';
 import CarCard from './CarCard';
-import CarCard2 from './CarCard2';
+import CarCard2 from './AgentCard2';
 import CarouselBlogs from './CarouselBlogs';
 import CustomButton from './CustomButton';
 import CustomFilter from './CustomFilter';
@@ -14,7 +14,7 @@ import Navbar from './Navbar';
 import OffCanvas from './OffCanvas';
 import SearchBar from './SearchBar';
 import SearchBar2 from './SearchBar2';
-import SearchManufacturer from './SearchManufacturer';
+import SearchManufacturer from './SearchLocation';
 import ShowMore from './ShowMore';
 import WhyChoose from './WhyChoose';
 

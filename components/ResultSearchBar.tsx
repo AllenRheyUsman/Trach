@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Combobox } from '@headlessui/react';
-import { SearchManuFacturerProps } from '@/types';
-import { drive, fuels, manufacturers, transmission, yearsOfProduction } from '@/constants';
+import { SearchLocationProps } from '@/types';
+import { locations, price, rating} from '@/constants';
 import {  CustomFilter, } from '.';
 
 import Modal from './Modal';
@@ -21,36 +21,36 @@ const SearchButton = ({ title, otherClasses }: { title: string; otherClasses: st
   </button>
 );
 
-const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerProps) => {
+const ResultSearchBar = ({ location, setLocation }: SearchLocationProps) => {
   const [query, setQuery] = useState('');
-  const [model, setModel] = useState('');
+  const [agentname, setAgentName] = useState('');
   const router = useRouter();
 
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (manufacturer.trim() === '' && model.trim() === '') {
+    if (location.trim() === '' && agentname.trim() === '') {
       return alert('Please fill in the search bar');
     }
 
     try {
-      await updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
-      router.push(`/result?manufacturer=${manufacturer}`);
+      await updateSearchParams(agentname.toLowerCase(), location.toLowerCase());
+      router.push(`/result?location=${location}`);
     } catch (error) {
       console.error('Error updating search parameters:', error);
     }
   };
 
-  const updateSearchParams = async (model: string, manufacturer: string) => {
+  const updateSearchParams = async (agentname: string, location: string) => {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
         const searchParams = new URLSearchParams(window.location.search);
 
-        searchParams.delete('model');
+        searchParams.delete('agentname');
 
-        if (manufacturer) {
-          searchParams.set('manufacturer', manufacturer);
+        if (location) {
+          searchParams.set('location', location);
         } else {
-          searchParams.delete('manufacturer');
+          searchParams.delete('location');
         }
 
         const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
@@ -61,9 +61,9 @@ const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerPr
     });
   };
 
-  const filteredManufacturers = query === ''
-    ? manufacturers
-    : manufacturers.filter((item) => (
+  const filteredLocations= query === ''
+    ? locations
+    : locations.filter((item) => (
       item.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
     ));
 
@@ -71,7 +71,7 @@ const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerPr
   <form className='hero w-full mt-5  bg-black' onSubmit={handleSearch}>
     
     <div className='w-full mx-5 gap-5 p-5 px-10 rounded-sm bg-white justify-between flex flex-wrap hero '>
-    <Combobox value={manufacturer} onChange={setManuFacturer}  >
+    <Combobox value={location} onChange={setLocation}  >
           
           <Combobox.Button className="">
             <Image
@@ -90,10 +90,9 @@ const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerPr
             />
           
             
-            <CustomFilter title='test1' options={drive} />
-            <CustomFilter title='test1' options={fuels} />
-            <CustomFilter title='test2' options={yearsOfProduction} />
-            <CustomFilter title='test3' options={transmission} />
+            <CustomFilter title='test1' options={price} />
+            <CustomFilter title='test1' options={rating} />
+             
             <SearchButton title="Search" otherClasses={'rounded-md bg-[#7100C3]'} />
             <Modal/>
           
@@ -101,7 +100,7 @@ const ResultSearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerPr
           
         
         <Combobox.Options className="absolute top-full left-10 pl-10 ml-10 z-10">
-          {filteredManufacturers.map((item) => (
+          {filteredLocations.map((item) => (
             <Combobox.Option
               key={item}
               value={item}
