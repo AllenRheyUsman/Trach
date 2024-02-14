@@ -7,10 +7,10 @@ import { CustomFilter, SearchBar, SearchBar2, ShowMore } from '@/components';
 import SearchLocation from '@/components/SearchLocation';
 import { PriceRange, SelectRating, fuels } from '@/constants';
 
-interface Agent {
-  Agent:AgentProps;
+// interface Agent {
+//   Agent:AgentProps;
  
-}
+// }
 
  
 

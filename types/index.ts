@@ -88,6 +88,18 @@ export interface SearchPostCodePropstest {
 }
 
 // sdfsdfsdfsf
+export interface AgentDetailsProps{
+  agentDetails:{
+    full_name:string
+    photo: {
+      href: string;
+    };
+    rating: number;
+    review_count: React.ReactNode;
+  }
+  
+  };
+
 
 export interface AgentProps {
   background_photo:{

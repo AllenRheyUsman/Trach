@@ -32,7 +32,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
 
   // Handle view profile click
   const handleViewProfile = () => {
-    router.push(`/profile?agentname=${agent.full_name}`);
+    router.push(`/details?agent?id=${agent.id}`);
   };
 
   // Render the AgentCard component
@@ -129,7 +129,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
               containerStyles='w-full py-[16px] rounded-sm bg-transparent border'
               textStyles=" text-[#9300FF] text-[14px] leading-[17px] font-bold"
               rightIcon="/right-arrow.svg"
-              handleClick={() => setIsOpen(true)}
+              handleClick={handleViewProfile}
             />
           </div>
         </div>
@@ -144,7 +144,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
         </div>
       </div>
 
-      <AgentDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} agent={agent} />
+      {/* <AgentDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} agent={agent} /> */}
     </div>
   );
 };

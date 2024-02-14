@@ -31,22 +31,21 @@ export const deleteSearchParams = (type: string) => {
 };
 export const navigateSearchParams = (type: string, value: string) => {
   const newPathname = updateSearchParams(type, value);
-  window.location.href = `/trial${newPathname}`;
+  window.location.href = `/details${newPathname}`;
 };
 
  
-  export async function fetchAgent(filters: FilterAgentProps) {
-    const { location, page, rating, price } = filters;
+  export async function fetchAgentDetails() {
+    
 
-
-  // export async function fetchAgent(){
+ 
      
   
 
  
 
   // Set the required headers for the API request
-  const headers: HeadersInit = {
+  const headers  = {
     
    
 
@@ -57,7 +56,7 @@ export const navigateSearchParams = (type: string, value: string) => {
 
   // Set the required headers for the API request
   const response = await fetch(
-    `https://realtor16.p.rapidapi.com/search_agents?location=${location}&page=${page}&rating=${rating}&price=${price}`,
+    "https://realtor16.p.rapidapi.com/agent?id=569e892a89a68901006bdb99",
    
     {
       headers: headers,
