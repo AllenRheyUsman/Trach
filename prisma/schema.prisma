@@ -15,6 +15,7 @@ model User{
   email String? @unique
   emailVerified DateTime?
   image String?
+ 
   hashedPassword String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -26,6 +27,7 @@ model User{
   seenMessages Message[] @relation("Seen", fields: [seenMessageIds], references: [id])
   accounts Account[]
   messages Message[]
+
 }
 model Account{
     id String @id @default(auto()) @map ("_id") @db.ObjectId

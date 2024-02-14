@@ -2,19 +2,21 @@ import React from 'react';
 import { fetchAgent } from '@/utils';
  
 import AgentCard from '@/components/AgentCard';
-import { HomeProps } from '@/types';
+import { AgentProps, HomeProps } from '@/types';
 import { CustomFilter, SearchBar, SearchBar2, ShowMore } from '@/components';
 import SearchLocation from '@/components/SearchLocation';
 import { PriceRange, SelectRating, fuels } from '@/constants';
 
 interface Agent {
-  
+  Agent:AgentProps;
  
 }
 
  
 
 export default async function Home({ searchParams }: HomeProps) {
+
+  
 
 
   const response  = await fetchAgent(
@@ -40,8 +42,12 @@ export default async function Home({ searchParams }: HomeProps) {
       <CustomFilter title='rating' options={SelectRating} />
       <CustomFilter title='price' options={PriceRange} />
       </div>
-      <div className=' mt-16 flex justify-center   flex-col gap-2 w-full mx-[6%]'>
-       {/* {response.agents.length} agents found in {response.location} */}
+      <div className=' mt-16 flex justify-start flex-row gap-2   mx-[6%] text-xl font-extrabold'>
+       
+       {response.agents.length} agents found in 
+
+       <span  className='text-purple-700' style={{ textTransform: 'capitalize' }}>{searchParams.location}</span>
+       
       </div>
       <div className='home__error-container'>
         {isDataEmpty ? (
@@ -51,7 +57,7 @@ export default async function Home({ searchParams }: HomeProps) {
         ) : (
           <section>
             <div className='home__cars-wrapper'>
-              {response.agents.map((agent: Agent, index: number) => (
+              {response.agents.map((agent: AgentProps, index: number) => (
                 <div key={index}>
                 
                 <AgentCard agent={agent}/>

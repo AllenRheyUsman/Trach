@@ -13,6 +13,7 @@ interface AgentDetailsProps{
 }
 
 const AgentDetails = ({isOpen, closeModal, agent}:AgentDetailsProps) => {
+    //Nick Shepherd  "569e892a89a68901006bdb99"
     
   return (
     <>
@@ -66,24 +67,29 @@ const AgentDetails = ({isOpen, closeModal, agent}:AgentDetailsProps) => {
                             />
                         </button>
                         <div className='flex-1 flex flex-col gap-3'>
-                            <div className='relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg'>
-                            <Image src={"/hero/png"} alt='car model' fill priority className='object-contain'/>
+                            <div className='relative w-full h-40 bg-cover bg-center rounded-lg'  style={{
+                    //   backgroundImage: `url(${agent.background_photo.href})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                    }}>
+                             <img src={agent.photo.href} alt="" />
                             </div>
                             <div className='flex gap-3'>
                                 <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                                <Image src={"/hero/png"} alt='car model' fill priority className='object-contain'/>
+                                <Image src={"/hero.png"} alt='car model' fill priority className='object-contain'/>
                                 </div>
                                 <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                                <Image src={"/hero/png"} alt='car model' fill priority className='object-contain'/>
+                                <Image src={"/hero.png"} alt='car model' fill priority className='object-contain'/>
                                 </div>
                                 <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                                <Image src={"/hero/png"} alt='car model' fill priority className='object-contain'/>
+                                <Image src={"/hero.png"} alt='car model' fill priority className='object-contain'/>
                                 </div>
                             </div>
                         </div>
                         <div className='flex-1 flex flex-col gap-2'>
                             <h2 className='font-semibold text-xl capitalize'>
-                                {agent.address.city} test 0 {agent.full_name}
+                                  {agent.full_name} {agent.id}
                             </h2>
                             <div className='mt-3 flex flex-wrap gap-4'>
                                 {Object.entries(agent).map(([key, value])=>(
@@ -91,9 +97,9 @@ const AgentDetails = ({isOpen, closeModal, agent}:AgentDetailsProps) => {
                                         <h4 className='text-gray capitalize'>
                                             {key.split("_").join("_")} 
                                         </h4>
-                                        <p className='text-black-100 font-semibold '>
-                                            {value}  
-                                        </p>
+                                        <p className='text-black-100 font-semibold'>
+      {typeof value === 'object' ? JSON.stringify(value) : value}
+    </p>
                                     </div>
                                 ))}
                             </div>

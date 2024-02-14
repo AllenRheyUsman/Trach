@@ -7,8 +7,11 @@ import { AgentProps } from '@/types';
 import { CustomButton } from '.';
 import { useRouter } from 'next/navigation';
 import AgentDetails from '@/components/AgentDetails';
-import { Avatar } from 'flowbite-react';
+ 
 import { FaCheck, FaMoneyBillAlt, FaPhone } from 'react-icons/fa';
+import { Avatar } from 'flowbite-react';
+ 
+ 
  
 
 // Define the AgentCardProps interface
@@ -48,14 +51,17 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
 
       {/* Body - Car details and image */}
       <div className='flex flex-col w-full my-5 py-5 bg-blue-50 bg-opacity-80 rounded-lg'>
-        <div className='flex flex-1 px-5'>
-          <Avatar img={agent.photo.href} rounded status="away" statusPosition="bottom-right" size="lg" className='object-fill'>
+        <div className='flex flex-1 px-5 '>
+          <Avatar img={agent.photo.href} status="away" statusPosition="bottom-right" size="lg" rounded >
             <div className="space-y-1 font-medium dark:text-white">
               <div className='text-md font-bold text-purple-500'>{agent.full_name}</div>
               <div className="text-sm text-gray-500 dark:text-gray-400">{agent.title}</div>
             </div>
           </Avatar>
+          
+           
         </div>
+         
 
         <div className=' mx-auto mb-3'>
           {/* Conditionally render stars based on agent_rating */}
@@ -88,8 +94,8 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
         <div className='flex relative w-fit border-l-2 border-gray-200 gap-1 pl-3 py-2 ml-5  '>
           <Image src={"/icon2.svg"} alt={"icon2"} width={15} height={15} className="pb-5  " />
           <div className="grid grid-rows-2  ">
-            <div className='text-md font-bold text-purple-800  '>Item 2</div>
-            <div className='text-end'>Description 2</div>
+            <div className='text-md font-bold text-purple-800  '>Agent Id</div>
+            <div className='text-end overflow-hidden'>{agent.id}</div>
           </div>
         </div>
 

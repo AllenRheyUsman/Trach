@@ -90,90 +90,34 @@ export interface SearchPostCodePropstest {
 // sdfsdfsdfsf
 
 export interface AgentProps {
-  mls: {
-    abbreviation: string;
-    member: {
-      id: string;
-      primary: boolean;
-      type: string;
-      name: string;
-      party_id: string;
-    };
-  }[];
-  branding:{
-    name:string
-    photo:null
-    type:string
-  }[];
-  phones:{
-    ext:string
-key:string
-number:string
-type:string
-  
-    
-  }[];
- 
-  recently_sold:{
-      count:number;
+  background_photo:{
+    href:string;
+  }
+  id: string;
+  address:{
+    city:string;
   }
   photo: {
-    href: string, // or any other property that holds the image URL
-  },
-  review_count: ReactNode;
-  role: string;
-  nick_name: string;
-  rating: string; // Update this type based on your actual data
-   
-  message: string;
-  address: {
-    city: string;
-    country: string;
-    line: string;
-    line2?: string;
-    postal_code: string;
-    state: string;
-    state_code: string;
-  };
-  advertiser_id: number;
-  agent_rating: number;
-  agent_type: ("buyer" | "seller")[];
-  agent_team_details: {
-    is_team_member: boolean;
-  };
-  background_photo: {
     href: string;
   };
-  broker: {
-    accent_color: string;
-    designations: string[];
-    fulfillment_id: number;
-    name: string;
-    photo: {
-      href: string;
-    };
-    video?: string;
-  };
-  description: string;
-  designations: string[];
-  feed_licenses?: FeedLicense[]; // Define a specific type for feed_licenses
-  first_month: number;
-  first_year: number;
-  for_sale_price: {
-    count: number;
-    last_listing_date: string;
-    max: number;
-    min: number;
-  };
+  review_count: React.ReactNode;
+  role: string;
   full_name: string;
-  has_photo: boolean;
-  href: string;
-  id: string;
-  is_realtor: boolean;
   title: string;
-  types: string[];
-  web_url: string;
+  agent_rating: number;
+  rating: string;
+  phones: {
+    number: string;
+  }[];
+  recently_sold: {
+    count: number;
+  };
+  for_sale_price: {
+    min: number;
+    max: number;
+  };
 }
+
 
 interface FeedLicense {
   // Define the structure of a feed license
