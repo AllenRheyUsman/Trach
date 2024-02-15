@@ -10,6 +10,8 @@ interface AgentCardProps {
     agent: AgentDetailsProps;
   }
 export default function SideBar({agent}:AgentCardProps) {
+  
+      
     const isListedOnOpen = true;
   return (
    
@@ -18,22 +20,22 @@ export default function SideBar({agent}:AgentCardProps) {
     <Sidebar aria-label="Sidebar with multi-level dropdown example">
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-         <Avatar img={agent.agentDetails.photo.href} rounded size={"xl"} className='my-5' bordered color="purple"  status="away" statusPosition="bottom-right"/>
+         <Avatar img={agent.agentDetails?.photo.href} rounded size={"xl"} className='my-5' bordered color="purple"  status="away" statusPosition="bottom-right"/>
           <Sidebar.Item>
             <div className='flex flex-col  mx-auto items-center gap-2'>
                 <p className='text-gray-400 text-lg'>
-                    {agent.agentDetails.full_name}
+                    {agent.agentDetails?.full_name}
                 </p>
                 <p className='text-2xl font-extrabold text-purple-700'>
-                {agent.agentDetails.full_name}
+                {agent.agentDetails?.full_name}
                 </p>
                 <div className='flex flex-1 gap- mb-2'>
                 <HiStar className='text-yellow-400'/>
                 <p className='text-gray-400 '>
-                {agent.agentDetails.review_count}
+                {agent.agentDetails?.review_count}
                 </p>
                 <p className='text-gray-400 '>
-                {agent.agentDetails.rating}
+                {agent.agentDetails?.rating}
                 </p>
                 </div>
             </div>

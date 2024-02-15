@@ -31,12 +31,25 @@ export interface FilterAgentProps {
   page?: number;
   rating?: number;
   price?: string;
+  id?:string;
+}
+
+export interface HomeDetailsProps {
+  searchParams: FilterAgentDetailsProps;
+}
+export interface FilterAgentDetailsProps {
+   
+  id?:string;
+  agentDetails:{
+    address:{
+      city:string
+    }
+  }
 }
 
 export interface HomeProps {
   searchParams: FilterAgentProps;
 }
-
 export interface CarCardProps {
   model: string;
   make: string;
@@ -88,17 +101,19 @@ export interface SearchPostCodePropstest {
 }
 
 // sdfsdfsdfsf
-export interface AgentDetailsProps{
-  agentDetails:{
-    full_name:string
+export interface AgentDetailsProps {
+  id: string;
+  agentDetails: {
+   
+    full_name: string;
     photo: {
       href: string;
     };
     rating: number;
     review_count: React.ReactNode;
-  }
-  
   };
+}
+
 
 
 export interface AgentProps {
