@@ -1,12 +1,22 @@
 
 'use client';
 
-import { Avatar, Sidebar } from 'flowbite-react';
-import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineMail, HiOutlineMinusSm, HiOutlinePlusSm, HiShoppingBag, HiStar, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
+import { Avatar, Navbar, Sidebar } from 'flowbite-react';
+import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineInformationCircle, HiOutlineMail, HiOutlineMinusSm, HiOutlinePlusSm, HiShoppingBag, HiStar, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
 import { BiBuoy } from 'react-icons/bi';
 import { AgentDetailsProps } from '@/types';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Hero } from '@/components';
+import Header from './Header';
+import {
+  HiCurrencyDollar,
+  HiOutlineClock,
+  
+  HiOutlineCalendar
+} from 'react-icons/hi';
+import Overview from './Overview';
  
 export default function SideBar() {
   const [agentDetails, setAgentDetails] = useState<any>({});
@@ -38,6 +48,22 @@ export default function SideBar() {
     fetchData();
   }, []);
 
+  const icons = [
+    <HiCurrencyDollar />,
+    <HiCurrencyDollar />,
+    <HiOutlineClock />,
+    <HiOutlineCalendar />,
+    <HiOutlineCalendar />
+  ];
+
+   // Filter keys to include only specific properties
+   const filteredKeys = ['full_name', 'review_count', 'rating', 'rating', ];
+   const items = filteredKeys.map((key, icon) => ({
+     title: key,
+     description: agentDetails[key],
+     icon:icons[icon] || null,
+   }));
+
   // Get the first five keys from agentDetails
   const firstFiveKeys = agentDetails ? Object.keys(agentDetails).slice(0, 10) : [];
   
@@ -46,7 +72,12 @@ export default function SideBar() {
   return (
    
 
-    <div>
+    <div  className='flex'>
+
+
+     
+
+      
         {/* <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Agent Detailsd</h1>
       <ul className="list-disc pl-6">
@@ -57,13 +88,15 @@ export default function SideBar() {
         ))}
       </ul>
     </div> */}
-    <Sidebar aria-label="Sidebar with multi-level dropdown example">
+    <div className='flex-none'>
+  
+    <Sidebar aria-label="" className='' >
       <Sidebar.Items>
         <Sidebar.ItemGroup>
          <Avatar img={agentDetails?.photo?.href} rounded size={"xl"} className='my-5' bordered color="purple"  status="away" statusPosition="bottom-right"/>
           <Sidebar.Item>
         
-            <div className='flex flex-col  mx-auto items-center gap-2'>
+            <div className='flex flex-col  mx-auto items-center gap-2 '>
                 <p className='text-gray-400 text-lg'>
                     {agentDetails?.full_name}
                 </p>
@@ -149,6 +182,17 @@ export default function SideBar() {
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>
+
     </div>
+    <div className='flex-auto '>
+        <Header items={items} />
+        <Overview content={agentDetails?.description}/>
+      </div>
+    
+  </div>
+
+   
+     
+    
   );
 }
