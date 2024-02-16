@@ -42,7 +42,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
       <div className='flex w-full justify-between text-gray py-3'>
         <div className='flex flex-wrap justify-center items-center gap-2'>
           
-          <p className='text-[14px] rounded-full'>  {agent.title}</p>
+          <p className='text-[14px] rounded-full'>  {agent.office.name}</p>
         </div>
         <div className='flex flex-col justify-center items-center gap-2'>
           offline

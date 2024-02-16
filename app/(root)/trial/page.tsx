@@ -6,6 +6,8 @@ import { AgentProps, HomeProps } from '@/types';
 import { CustomFilter, SearchBar, SearchBar2, ShowMore } from '@/components';
 import SearchLocation from '@/components/SearchLocation';
 import { PriceRange, SelectRating, fuels } from '@/constants';
+ 
+import Link from 'next/link';
 
 // interface Agent {
 //   Agent:AgentProps;
@@ -15,6 +17,7 @@ import { PriceRange, SelectRating, fuels } from '@/constants';
  
 
 export default async function Home({ searchParams }: HomeProps) {
+  
 
   
 
@@ -34,13 +37,26 @@ export default async function Home({ searchParams }: HomeProps) {
 
   const isDataEmpty = !response.agents || response.agents.length === 0 || response.agents.length <1 ;
 
+  
+  
+  
   return (
     <main className='overflow-hidden '>
       
       
-      <div className=' hero     justify-center relative  mt-5 bg-white  p-3'>
+      <div className=' hero     justify-between relative  mt-5 bg-white  p-3 '>
       <CustomFilter title='rating' options={SelectRating} />
       <CustomFilter title='price' options={PriceRange} />
+      <CustomFilter title='empty' options={PriceRange} />
+      <CustomFilter title='empty' options={PriceRange} />
+
+      <Link href={"/"}>
+      <button   className='text-white bg-purple-700 p-2 rounded-md'>
+          Apply Filters
+        </button>
+      </Link>
+
+    
       </div>
       <div className=' mt-16 flex justify-start flex-row gap-2 mx-[6%] text-xl font-extrabold'>
   {response?.agents?.length > 0

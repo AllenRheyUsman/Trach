@@ -117,6 +117,9 @@ export interface AgentDetailsProps {
 
 
 export interface AgentProps {
+  office:{
+    name:string;
+  }
   background_photo:{
     href:string;
   }
