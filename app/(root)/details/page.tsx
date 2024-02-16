@@ -18,15 +18,7 @@ export default async function Home({ }: AgentDetailsProps) {
   
 
 
-  const response  = await fetchAgentDetails(
-        // {
-        //     id: searchParams.id || "",
-           
-
-        // }
-
-  );
-  // console.log(response)
+   
   
 
   
@@ -39,7 +31,7 @@ export default async function Home({ }: AgentDetailsProps) {
                
                
                 
-                <SideBar agent={response}  />
+                <SideBar   />
                  
                 
               

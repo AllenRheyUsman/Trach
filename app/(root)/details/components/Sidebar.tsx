@@ -7,10 +7,8 @@ import { BiBuoy } from 'react-icons/bi';
 import { AgentDetailsProps } from '@/types';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-interface AgentCardProps {
-    agent: AgentDetailsProps;
-  }
-export default function SideBar({agent}:AgentCardProps) {
+ 
+export default function SideBar() {
   const [agentDetails, setAgentDetails] = useState<any>({});
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +47,7 @@ export default function SideBar({agent}:AgentCardProps) {
    
 
     <div>
-        <div className="p-4">
+        {/* <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Agent Detailsd</h1>
       <ul className="list-disc pl-6">
         {firstFiveKeys.map((key) => (
@@ -58,27 +56,27 @@ export default function SideBar({agent}:AgentCardProps) {
           </li>
         ))}
       </ul>
-    </div>
+    </div> */}
     <Sidebar aria-label="Sidebar with multi-level dropdown example">
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-         <Avatar img={agent.agentDetails?.photo.href} rounded size={"xl"} className='my-5' bordered color="purple"  status="away" statusPosition="bottom-right"/>
+         <Avatar img={agentDetails?.photo?.href} rounded size={"xl"} className='my-5' bordered color="purple"  status="away" statusPosition="bottom-right"/>
           <Sidebar.Item>
         
             <div className='flex flex-col  mx-auto items-center gap-2'>
                 <p className='text-gray-400 text-lg'>
-                    {agent.agentDetails?.full_name}
+                    {agentDetails?.full_name}
                 </p>
                 <p className='text-2xl font-extrabold text-purple-700'>
-                {agent.agentDetails?.full_name}
+                {agentDetails?.full_name}
                 </p>
                 <div className='flex flex-1 gap- mb-2'>
                 <HiStar className='text-yellow-400'/>
                 <p className='text-gray-400 '>
-                {agent.agentDetails?.review_count}
+                {agentDetails?.review_count}
                 </p>
                 <p className='text-gray-400 '>
-                {agent.agentDetails?.rating}
+                {agentDetails?.rating}
                 </p>
                 </div>
             </div>
