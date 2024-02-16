@@ -51,7 +51,7 @@ export const navigateSearchParams = (type: string, value: string) => {
    
 
     'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
-    'X-RapidAPI-Host': 'realtor16.p.rapidapi.com'
+    'X-RapidAPI-Host':  process.env.NEXT_PUBLIC_RAPID_API_HOST || ""
     
   };
 

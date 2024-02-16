@@ -32,7 +32,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
 
   // Handle view profile click
   const handleViewProfile = () => {
-    router.push(`/details?agent?id=${agent.id}`);
+    router.push(`/details?id=${agent.id}`);
   };
 
   // Render the AgentCard component

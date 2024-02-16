@@ -42,13 +42,15 @@ export default async function Home({ searchParams }: HomeProps) {
       <CustomFilter title='rating' options={SelectRating} />
       <CustomFilter title='price' options={PriceRange} />
       </div>
-      <div className=' mt-16 flex justify-start flex-row gap-2   mx-[6%] text-xl font-extrabold'>
-       
-       {response.agents.length} agents found in 
+      <div className=' mt-16 flex justify-start flex-row gap-2 mx-[6%] text-xl font-extrabold'>
+  {response?.agents?.length > 0
+    ? `${response.agents.length} agents found in `
+    : '0 agents found in '}
+  <span className='text-purple-700' style={{ textTransform: 'capitalize' }}>
+    {searchParams.location}
+  </span>
+</div>
 
-       <span  className='text-purple-700' style={{ textTransform: 'capitalize' }}>{searchParams.location}</span>
-       
-      </div>
       <div className='home__error-container'>
         {isDataEmpty ? (
           <div>

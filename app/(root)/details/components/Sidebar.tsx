@@ -5,23 +5,66 @@ import { Avatar, Sidebar } from 'flowbite-react';
 import { HiArrowSmRight, HiChartPie, HiInbox, HiOutlineMail, HiOutlineMinusSm, HiOutlinePlusSm, HiShoppingBag, HiStar, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
 import { BiBuoy } from 'react-icons/bi';
 import { AgentDetailsProps } from '@/types';
- 
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 interface AgentCardProps {
     agent: AgentDetailsProps;
   }
 export default function SideBar({agent}:AgentCardProps) {
+  const [agentDetails, setAgentDetails] = useState<any>({});
+  useEffect(() => {
+    const fetchData = async () => {
+      // Get the current URL
+      const url = new URL(window.location.href);
+      // Extract the ID from the URL
+      const id = url.searchParams.get('id');
+
+      const options = {
+        method: 'GET',
+        url: `https://realtor16.p.rapidapi.com/agent?id=${id}`,
+        headers: {
+          'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
+          'X-RapidAPI-Host':  process.env.NEXT_PUBLIC_RAPID_API_HOST || ""
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        setAgentDetails(response.data.agentDetails);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Get the first five keys from agentDetails
+  const firstFiveKeys = agentDetails ? Object.keys(agentDetails).slice(0, 10) : [];
   
       
     const isListedOnOpen = true;
   return (
    
 
-    
+    <div>
+        <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Agent Detailsd</h1>
+      <ul className="list-disc pl-6">
+        {firstFiveKeys.map((key) => (
+          <li key={key}>
+            <span className="font-bold">{key}:</span> {JSON.stringify(agentDetails[key])}
+          </li>
+        ))}
+      </ul>
+    </div>
     <Sidebar aria-label="Sidebar with multi-level dropdown example">
       <Sidebar.Items>
         <Sidebar.ItemGroup>
          <Avatar img={agent.agentDetails?.photo.href} rounded size={"xl"} className='my-5' bordered color="purple"  status="away" statusPosition="bottom-right"/>
           <Sidebar.Item>
+        
             <div className='flex flex-col  mx-auto items-center gap-2'>
                 <p className='text-gray-400 text-lg'>
                     {agent.agentDetails?.full_name}
@@ -108,6 +151,6 @@ export default function SideBar({agent}:AgentCardProps) {
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>
-    
+    </div>
   );
 }

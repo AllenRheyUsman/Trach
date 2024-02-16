@@ -26,7 +26,7 @@ export default async function Home({ }: AgentDetailsProps) {
         // }
 
   );
-  console.log(response)
+  // console.log(response)
   
 
   
