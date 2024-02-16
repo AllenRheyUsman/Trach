@@ -17,6 +17,10 @@ import {
   HiOutlineCalendar
 } from 'react-icons/hi';
 import Overview from './Overview';
+import Properties from './Properties';
+import Media from './Media';
+import Team from './Team';
+import Reviews from './Reviews';
  
 export default function SideBar() {
   const [agentDetails, setAgentDetails] = useState<any>({});
@@ -88,7 +92,7 @@ export default function SideBar() {
         ))}
       </ul>
     </div> */}
-    <div className='flex-none'>
+    <div className='flex-none '>
   
     <Sidebar aria-label="" className='' >
       <Sidebar.Items>
@@ -187,6 +191,10 @@ export default function SideBar() {
     <div className='flex-auto '>
         <Header items={items} />
         <Overview content={agentDetails?.description}/>
+        <Properties/>
+        <Media/>
+        <Team/>
+        <Reviews/>
       </div>
     
   </div>
