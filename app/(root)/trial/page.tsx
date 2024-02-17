@@ -3,18 +3,11 @@ import { fetchAgent } from '@/utils';
  
 import AgentCard from '@/components/AgentCard';
 import { AgentProps, HomeProps } from '@/types';
-import { CustomFilter, SearchBar, SearchBar2, ShowMore } from '@/components';
-import SearchLocation from '@/components/SearchLocation';
+import { CustomFilter, ShowMore } from '@/components';
+
 import { PriceRange, SelectRating, fuels } from '@/constants';
  
 import Link from 'next/link';
-
-// interface Agent {
-//   Agent:AgentProps;
- 
-// }
-
- 
 
 export default async function Home({ searchParams }: HomeProps) {
   

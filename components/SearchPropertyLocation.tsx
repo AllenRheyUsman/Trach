@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Combobox, Transition } from '@headlessui/react';
 import { SearchLocationProps } from '@/types';
 import { locations } from '@/constants';
-import { SearchBar } from '.';
+
 
 const SearchButton = ({ title, otherClasses }: { title: string; otherClasses: string }) => (
   <button
@@ -20,7 +20,7 @@ const SearchButton = ({ title, otherClasses }: { title: string; otherClasses: st
 
 // ... (other imports)
 
-const SearchLocation = ({ location, setLocation }: SearchLocationProps) => {
+const SearchPropertyLocation = ({ location, setLocation }: SearchLocationProps) => {
   const [query, setQuery] = useState('');
 
   const filteredLocations = query === ''
@@ -51,7 +51,8 @@ const SearchLocation = ({ location, setLocation }: SearchLocationProps) => {
             onChange={(e) => setQuery(e.target.value)}
           />
           <div className="justify-end flex space-x-5 w-full mx-2">
-          <SearchButton title="Find Agents" otherClasses={'rounded-md bg-[#7100C3]'} />
+          <SearchButton title="To Sell" otherClasses={'rounded-md bg-[#7100C3]'} />
+          <SearchButton title="To Rent" otherClasses={'rounded-md '} />
           </div>
         </div>
     
@@ -93,5 +94,5 @@ const SearchLocation = ({ location, setLocation }: SearchLocationProps) => {
   );
 };
 
-export default SearchLocation;
+export default SearchPropertyLocation;
 

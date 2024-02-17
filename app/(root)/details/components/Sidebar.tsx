@@ -31,12 +31,20 @@ export default function SideBar() {
       // Extract the ID from the URL
       const id = url.searchParams.get('id');
 
+      const apiKey = process.env.NEXT_PUBLIC_RAPID_API_KEY;
+const apiHost = process.env.NEXT_PUBLIC_RAPID_API_HOST;
+
+if (!apiKey || !apiHost) {
+  console.error('Rapid API key or host is missing. Please check your environment variables.');
+  // Handle the missing environment variables as needed (throw an error, provide default values, etc.)
+}
+
       const options = {
         method: 'GET',
-        url: `https://realtor16.p.rapidapi.com/agent?id=${id}`,
+        url: `https://${apiHost}/agent?id=${id}`,
         headers: {
-          'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
-          'X-RapidAPI-Host':  process.env.NEXT_PUBLIC_RAPID_API_HOST || ""
+          'X-RapidAPI-Key': apiKey,
+          'X-RapidAPI-Host':  apiHost
         },
       };
 

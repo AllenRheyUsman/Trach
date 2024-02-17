@@ -2,11 +2,10 @@ import React from 'react';
  
  
 
-import { fetchAgentDetails } from '@/utils/fetchAgentDetails';
+
 import { AgentDetailsProps, AgentProps } from '@/types';
 import SideBar from './components/Sidebar';
-import { Hero } from '@/components';
-import Header from './components/Header';
+
  
  
 

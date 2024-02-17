@@ -33,6 +33,12 @@ export interface FilterAgentProps {
   price?: string;
   id?:string;
 }
+export interface FilterPropertiesProps {
+  location?: string;
+  type?: string;
+  page?: number;
+ 
+}
 
 export interface HomeDetailsProps {
   searchParams: FilterAgentDetailsProps;
@@ -49,6 +55,9 @@ export interface FilterAgentDetailsProps {
 
 export interface HomeProps {
   searchParams: FilterAgentProps;
+}
+export interface PropProps {
+  searchParams: FilterPropertiesProps;
 }
 export interface CarCardProps {
   model: string;
@@ -114,6 +123,26 @@ export interface AgentDetailsProps {
   };
 }
 
+export interface PropertyProps {
+  status: ReactNode;
+  property_id: any;
+  primary_photo: any;
+  primary_photos: any;
+  photos: any;
+  branding: any;
+  home_search: {
+    count: number;
+    results: {
+      branding: {
+        name: string;
+        type:string;
+      }[];
+      photos: {
+        href: string;
+      }[];
+    }[];
+  };
+}
 
 
 export interface AgentProps {
