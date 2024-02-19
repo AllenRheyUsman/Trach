@@ -37,7 +37,9 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
 
   // Render the AgentCard component
   return (
-    <div className='shadow-sm gap-5 flex flex-col p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl '>
+<div className='shadow-sm mx-5 flex flex-col p-5 justify-center items-start bg-primary-blue-100 hover:bg-white hover:shadow-lg rounded-3xl transform transition-transform duration-300 ease-in-out hover:scale-105'>
+ 
+
       {/* Header */}
       <div className='flex w-full justify-between text-gray py-3'>
         <div className='flex flex-wrap justify-center items-center gap-2'>
@@ -51,7 +53,7 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
 
       {/* Body - Car details and image */}
       <div className='flex flex-col w-full my-5 py-5 bg-blue-50 bg-opacity-80 rounded-lg'>
-        <div className='flex flex-1 px-5 '>
+        <div className=' flex text-left justify-start justify-items-start px-5 '>
           <Avatar img={agent.photo.href} status="away" statusPosition="bottom-right" size="lg" rounded >
             <div className="space-y-1 font-medium dark:text-white">
               <div className='text-md font-bold text-purple-500'>{agent.full_name}</div>

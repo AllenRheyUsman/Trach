@@ -10,7 +10,7 @@ const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
 
   const handleNavigation = () => {
     // Calculate the new limit based on the page number and navigation type
-    const page = (pageNumber + 1) * 1;
+    const page = (pageNumber *10 )+1;
 
     // Update the "limit" search parameter in the URL with the new value
     const newPathname = updateSearchParams("page", `${page}`);

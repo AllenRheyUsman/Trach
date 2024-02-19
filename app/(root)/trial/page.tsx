@@ -28,7 +28,7 @@ export default async function Home({ searchParams }: HomeProps) {
   );
   
 
-  const isDataEmpty = !response.agents || response.agents.length === 0 || response.agents.length <1 ;
+  const isDataEmpty = !response?.agents || response?.agents.length === 0 || response?.agents.length <1 ;
 
   
   
@@ -68,7 +68,7 @@ export default async function Home({ searchParams }: HomeProps) {
         ) : (
           <section>
             <div className='home__cars-wrapper'>
-              {response.agents.map((agent: AgentProps, index: number) => (
+              {response.agents.slice(0,10).map((agent: AgentProps, index: number) => (
                 <div key={index}>
                 
                 <AgentCard agent={agent}/>
@@ -77,7 +77,7 @@ export default async function Home({ searchParams }: HomeProps) {
               ))}
             </div>
             <ShowMore
-              pageNumber={(searchParams.page || 10) / 10}
+              pageNumber={(searchParams.page || 1) / 10}
               isNext={(searchParams.page || 10) > response.length}
             />
           </section>

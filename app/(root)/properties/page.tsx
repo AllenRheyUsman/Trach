@@ -15,34 +15,11 @@ export default async function Home({ searchParams }: PropProps) {
 
    
 
-  const isDataEmpty = !response.home_search?.results || response.home_search.results.length === 0 || response.home_search.results.length < 1;
+  const isDataEmpty = !response?.home_search?.results || response?.home_search.results.length === 0 || response?.home_search.results.length < 1;
 
   return (
     <main className='overflow-hidden'>
-        {/* {response.home_search.results.map((property: PropertyProps, index:number) => (
-  <div key={index}>
-     <img
-      className='rounded-full'
-      src={property.primary_photo?.href || ''}
-      alt='Property Photo'
-    />
-    <img
-      className='rounded-full'
-      src={property.photos[0]?.href || ''}
-      alt='Property Photo'
-    />
-     <img
-      className='rounded-full'
-      src={property.photos[1]?.href || ''}
-      alt='Property Photo'
-    />
-   
-    <p>{property.branding[0]?.name || ''}</p>
-    <p> {property.branding[0]?.type}</p>
-    <p> {property.property_id}</p>
-    <p> {property.status}</p>
-  </div>
-))} */}
+       
 
       <div className='hero justify-between relative mt-5 bg-white p-3'>
         <CustomFilter title='rating' options={SelectRating} />
@@ -69,19 +46,20 @@ export default async function Home({ searchParams }: PropProps) {
       <div className='home__error-container'>
         {isDataEmpty ? (
           <div>
+            
             <h2 className='text-black text-xl font-bold'>Oops, no properties found</h2>
           </div>
         ) : (
           <section  className="container mx-auto mt-5">
             <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-              {response.home_search.results.map((property: PropertyProps, index: number) => (
+              {response.home_search.results.slice(0,10).map((property: PropertyProps, index: number) => (
                 <div key={index}>
-                 <PropertyCard property={property}/>
+                 <PropertyCard property={property} href={''}/>
                 </div>
               ))}
             </div>
             <ShowMore
-  pageNumber={(searchParams.page || 10) / 10}
+  pageNumber={(searchParams.page || 1) / 10}
   isNext={(searchParams.page || 10) > response.home_search.results.length}
 />
 

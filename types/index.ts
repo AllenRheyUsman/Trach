@@ -124,7 +124,22 @@ export interface AgentDetailsProps {
 }
 
 export interface PropertyProps {
-  status: ReactNode;
+  description(description: any): unknown;
+  status:string;
+  list_date: number;
+  list_price: number;
+  lead_attributes:{
+    list_price:number;
+  }
+  location:{
+    county: any;
+    address:{
+      state: ReactNode;
+      line: ReactNode;
+      city:string;
+    }
+  }
+  
   property_id: any;
   primary_photo: any;
   primary_photos: any;
