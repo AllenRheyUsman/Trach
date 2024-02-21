@@ -20,9 +20,7 @@ const Home = () => {
           <Link href={'/'}>
             <Image src={"/logo-new.svg"} width={78} height={48} alt='' className=' mt-3'/>
           </Link>
-          <h2 className='text-start lg:text-3xl font-extrabold tracking-tight text-purple-900 sm:text-xl'>
-            Login to your account!
-          </h2>
+         
           <AuthForm />
           
         </div>

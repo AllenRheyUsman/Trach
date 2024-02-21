@@ -1,6 +1,6 @@
 import AsSeenIn from './AsSeenIn';
 import Blogs from './Blogs';
-import CarCard from './CarCard';
+
 import CarCard2 from './AgentCard2';
 import CarouselBlogs from './CarouselBlogs';
 import CustomButton from './CustomButton';
@@ -27,7 +27,7 @@ export{
     SearchBar,
     CustomFilter,
     SearchManufacturer,
-    CarCard,
+    
     FlowbiteNavBar,
     FlowbiteSearch,
     Finding,
