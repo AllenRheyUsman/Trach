@@ -34,7 +34,7 @@ const SearchBar2 = () => {
       // Await the asynchronous updateSearchParams function
       await updateSearchParams(agentname.toLowerCase(), location.toLowerCase());
 
-      // After updating search parameters, navigate to "/result"
+      // After updating search parameters, navigate to "/trial"
       router.push(`/trial?location=${location}`);
       //**change to location */
 

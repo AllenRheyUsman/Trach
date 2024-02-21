@@ -31,11 +31,11 @@ export const deleteSearchParams = (type: string) => {
 };
 export const navigateSearchParams = (type: string, value: string) => {
   const newPathname = updateSearchParams(type, value);
-  window.location.href = `/properties${newPathname}`;
+  window.location.href = `/sale${newPathname}`;
 };
 
  
-export async function fetchProperties(filters: FilterPropertiesProps) {
+export async function fetchPropertiesForSale(filters: FilterPropertiesProps) {
     const { location, page, type } = filters;
   
     // Set the required headers for the API request

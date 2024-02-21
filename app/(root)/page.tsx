@@ -20,7 +20,10 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main className='overflow-hidden'>
+   
       <Hero />
+      
+      
       <Finding/>
       <WhyChoose/>
 

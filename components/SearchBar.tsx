@@ -54,7 +54,7 @@ const SearchBar = () => {
   return (
     <form className='searchbar' onSubmit={handleSearch}>
       <div className='searchbar__item'>
-        <SearchManufacturer manufacturer={manufacturer} setManuFacturer={setManufacturer} />
+        {/* <SearchManufacturer manufacturer={manufacturer} setManuFacturer={setManufacturer} /> */}
       </div>
     </form>
   );

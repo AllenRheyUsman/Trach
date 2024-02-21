@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchProperties } from '@/utils/fetchProperties';
+import { fetchPropertiesForSale } from '@/utils/fetchPropertiesForSale';
 import { PropProps, PropertyProps } from '@/types';
 import { CustomFilter, ShowMore } from '@/components';
 import { PriceRange, SelectRating } from '@/constants';
@@ -7,7 +7,7 @@ import Link from 'next/link';
 import PropertyCard from '@/components/PropertyCard';
 
 export default async function Home({ searchParams }: PropProps) {
-  const response = await fetchProperties({
+  const response = await fetchPropertiesForSale({
     location: searchParams.location || "",
     page: searchParams.page || 1,
    

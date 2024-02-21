@@ -101,6 +101,8 @@ export interface SearchManuFacturerProps {
 export interface SearchLocationProps {
   location: string;
   setLocation: (location: string) => void;
+  
+   
 }
 
 // Update your SearchPostCodePropstest interface

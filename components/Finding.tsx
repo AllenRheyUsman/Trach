@@ -8,7 +8,7 @@ import { findings } from '@/constants';
  
 const Finding = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 hero">
+    <section className="bg-white dark:bg-gray-900 hero ">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
         <div className="w-3/4">
           <h1 className="text-[#7100C3] font-semibold text-lg">

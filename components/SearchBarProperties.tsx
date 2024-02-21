@@ -46,6 +46,20 @@ const SearchBarProperties = () => {
     }
   };
 
+  const handleSearchForRent = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (location.trim() === '') {
+      return alert('Please fill in the search bar');
+    }
+
+    try {
+      await updateSearchParams('rent', location.toLowerCase());
+      router.push(`/rent?location=${location}`);
+    } catch (error) {
+      console.error('Error updating search parameters:', error);
+    }
+  };
+
   const updateSearchParams = async (type: string, location: string, ) => {
     return new Promise<void>((resolve) => {
       // Simulating an asynchronous operation (e.g., API call)
