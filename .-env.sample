@@ -1,0 +1,28 @@
+# Environment variables declared in this file are automatically made available to Prisma.
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+DATABASE_URL="mongodb+srv://Trach:trach@cluster0.mnmq1uf.mongodb.net/test"
+
+NEXTAUTH_SECRET="NEXTAUTH_SECRET"
+GITHUB_ID= 320c8161765796d2fa38
+GITHUB_SECRET=5efdeba22f49544fa07d9ef60a57487244650527
+
+GOOGLE_CLIENT_ID=1091953521072-7jibfphjihk6lrghesrm9urjc7befmp0.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=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
+
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=dy9ul3g2v
+
+
+
+NEXT_PUBLIC_PUSHER_APP_KEY=91dc360af9762ae69454
+PUSHER_APP_ID=1750063
+PUSHER_SECRET=9dc56237c28eb5dae633
+
+NEXT_PUBLIC_RAPID_API_KEY=f23d3abdb5mshf5cd709584e1f5bp16d139jsnbcd42dd0fedd
+NEXT_PUBLIC_RAPID_API_HOST =realtor16.p.rapidapi.com
+
+#angelkikang ang mongodb generic pw

@@ -3,10 +3,19 @@ import RegistrationPage from './components/RegistrationPage'
 
 const page = () => {
   return (
-    <div>
+ 
+  <div className='hero  h-full bg-center bg-no-repeat  w-full flex   items-center justify-center sm:bg-cover md:bg-cover' style={{ backgroundImage: `url('/hero-new.png')` }}>
+          
+                
+              
+                <RegistrationPage/>
+               
+           
 
-        <RegistrationPage/>
-    </div>
+          
+        </div>
+       
+   
   )
 }
 

@@ -686,12 +686,16 @@ return (
           </div> */}
 
            
-          <div className='underline cursor-pointer font-semibold text-purple-500'  onClick={() => {
+          {/* <div className='underline cursor-pointer font-semibold text-purple-500'  onClick={() => {
               toggleVariant();
               setOpenModal(true);
-            }}>
+            }}> */}
+
+              <Link href={'/registration'}>
+            <div className='underline cursor-pointer font-semibold text-purple-500'>
               Register Now!
-          </div>
+             </div>
+             </Link>
          
           
         </div>
